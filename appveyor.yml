@@ -5,10 +5,9 @@ environment:
     secure: EPHC41AMatWKgl5tj7pHla7nDx9+qFPZq1zE3c/cbrFKamaWELUz0oHCbeDstF8N
 
 install:
-  - ps: Install-Product node 8.0
   - node --version
   - npm --version
-# - npm install -g cnpm --registry=https://registry.npm.taobao.org
+  - npm install -g cnpm --registry=https://registry.npm.taobao.org
   - npm install
   - npm install hexo-cli -g
 #  - npm install hexo-renderer-less --save
