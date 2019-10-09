@@ -79,5 +79,4 @@ theme: indigo
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/shaoxingu/shaoxingu.github.io
+  type:
