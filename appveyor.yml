@@ -7,13 +7,14 @@ environment:
 install:
   - node --version
   - npm --version
-#  - npm install -g cnpm --registry=https://registry.npm.taobao.org
+  - npm install -g cnpm --registry=https://registry.npm.taobao.org
   - npm install
   - npm install hexo-cli -g
-#  - npm install hexo-renderer-less --save
-#  - npm install hexo-generator-feed --save
-#  - npm install hexo-generator-json-content --save
-#  - npm install hexo-helper-qrcode --save
+  - npm install hexo-renderer-less --save
+  - npm install hexo-generator-feed --save
+  - npm install hexo-generator-json-content --save
+  - npm install hexo-helper-qrcode --save
+  - npm install hexo-helper-live2d --save
 
 build_script:
   - hexo clean
