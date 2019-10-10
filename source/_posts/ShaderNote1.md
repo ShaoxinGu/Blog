@@ -1,7 +1,7 @@
 ---
 title: UnityShader笔记【一】
 tags: Unity/Shader
-categories:学习笔记
+categories: 学习笔记
 ---
 
 # 应用阶段
