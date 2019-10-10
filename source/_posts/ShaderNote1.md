@@ -1,6 +1,6 @@
 ---
 title: UnityShader笔记【一】
-tags: Unity/Shader
+tags: [Unity, Shader]
 categories: 学习笔记
 ---
 
