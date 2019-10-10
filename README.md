@@ -1,2 +1,10 @@
 # Blog
-我的Hexo博客源工程，由AppVeyor持续集成。
+
+Framework:      Hexo  
+Theme:          Indigo  
+CI:             AppVeyor  
+Display:        https://ShaoxinGu.github.io  
+Target Project :https://github.com/ShaoxinGu/ShaoxinGu.github.io  
+
+
+
