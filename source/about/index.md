@@ -17,7 +17,7 @@ comment: false
 >
 > 之前也试过用Jekyll，但是总觉得不够强大。
 >
-> 该项目托管在我的Github，由AppVeyor持续集成的。
+> 该项目托管在我的Github，由AppVeyor持续集成。
 >
 > 如果你也想搭一个这样的博客，可以上网搜相关的教程照着做。
 >
