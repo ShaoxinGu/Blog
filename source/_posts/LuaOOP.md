@@ -4,9 +4,7 @@ tags: Lua
 categories: 学习笔记
 ---
 
-# Lua实现面向对象
-
-## 概述
+# 概述
 
 以下描述出自《Program in Lua》中文版：
 
