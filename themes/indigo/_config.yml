@@ -12,15 +12,20 @@ menu:
     text: 主页
     url: /
   archives:
+    text: 归档
     url: /archives
   tags:
+    text: 标签
     url: /tags
   th-list:
-    text: Categories
+    text: 分类
     url: /categories
   github:
     url: https://github.com/shaoxingu
     target: _blank
+  child:
+    text: 关于
+    url: /about
 
 # 你的头像url
 avatar: /img/avatar.jpg
@@ -38,9 +43,9 @@ email: 853674765@qq.com
 color: '#3F51B5'
 
 # 页面标题
-tags_title: Tags
-archives_title: Archives
-categories_title: Categories
+tags_title: 标签
+archives_title: 归档
+categories_title: 分类
 
 # 文章截断
 excerpt_render: false
