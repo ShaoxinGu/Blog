@@ -12,6 +12,8 @@ categories: 学习笔记
 
 
 
+# 实现方案
+
 ## 方案一
 
 Lua的作者之一[Roberto Lerusalimschy](https://en.wikipedia.org/wiki/Roberto_Ierusalimschy)在《Program in Lua》书中推荐了[一种实现LuaOO的方案](http://www.lua.org/pil/16.html)，这种方案很简单也很容易理解。
