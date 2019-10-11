@@ -65,25 +65,18 @@ b:Test1()               --将打印"Child Test1"
 b:Test2()               --将打印"Base Test2",调用的是父类的方法
 ```
 
-
 ## 方案二
 
-我在工作中接触到的算是方案一的升级版。
+这个方案是我在工作中接触到的，算是方案一的升级版。
 
 核心代码如下：
 
 ```lua
-Base = {__ClassType = "Base"}
+-- 所有类都会继承自这个类，真·基类
+Class = {__ClassType = "Class"}	
 ALL_CLASS = ALL_CLASS or {}
 
-function Base:New(...)
-    local o = {}
-    setmetatable(o, {__index = self})
-    if o.Ctor then o:Ctor(...) end -- 调用构造函数
-    return o
-end
-
-function Base:Inherit(ClassName, o)
+function Class:Inherit(ClassName, o)
     o = o or {}
     o.mt = { __index = o}
     assert(ClassName, "必须要有类名")
@@ -104,11 +97,11 @@ function Base:Inherit(ClassName, o)
     return o
 end
 
-function Base:IsSubObj(ObjType)
+function Class:IsSubObj(ObjType)
     return self:GetTypeMap()[ObjType]
 end
 
-function Base:GetTypeMap()
+function Class:GetTypeMap()
     local clsSelf = getmetatable(self)
     if clsSelf then
         local Temp = clsSelf.__index
@@ -121,22 +114,25 @@ function Base:GetTypeMap()
     return {}
 end
 
-function Base:Ctor() end
-function Base:InClass() return true end
-function Base:OnCreate() end
-function Base:OnDestroy() end
-function Base:GetType()	return self.__ClassType end
-```
+function Class:New(...)
+    local o = {}
+    setmetatable(o, {__index = self})
+    if o.Ctor then o:Ctor(...) end --调用构造函数
+    return o
+end
 
-与之配套的方法：
+function Class:Ctor() end
+function Class:InClass() return true end
+function Class:OnCreate() end
+function Class:OnDestroy() end
+function Class:GetType()	return self.__ClassType end
 
-```Lua
--- 获取一个类的父类 & 获取一个实例的构造类
+--获取一个class的父类
 function Super(Class)
     return getmetatable(Class).__index
 end
 
--- 判断一个类是否是类的子类 & 判断一个对象否是另一个类的实例
+--判断一个类是否是类的子类 & 判断一个对象否是另一个类的实例
 function IsSub(Obj, Base)
     local Temp = Obj
     while  1 do     --循环回溯metatable
@@ -151,5 +147,126 @@ function IsSub(Obj, Base)
         end
     end
 end
+```
+
+示例如下：
+
+```lua
+Base = Base or Class:Inherit("Base")
+
+function Base:Test1()
+    print("Base Test1")
+end
+
+function Base:Test2()
+    print("Base Test2")
+end
+
+Child = Child or Base:Inherit("Child")
+
+function Child:Test1()  --Child类重写了Test1方法
+    print("Child Test1")
+end
+
+local a = Base:new()    --生成一个Base类的实例
+a:Test1()               --将打印"Base Test1"
+a:Test2()               --将打印"Base Test2"
+
+local b = Child:new()   --生成一个Child类的实例
+b:Test1()               --将打印"Child Test1"
+b:Test2()               --将打印"Base Test2",调用的是父类的方法
+```
+
+## 方案三
+
+这个是云风提供的方案：[博客地址](https://blog.codingnow.com/cloud/LuaOO)。
+
+```lua
+local _class={}
+ 
+function class(super)
+	local class_type={}
+	class_type.ctor=false
+	class_type.super=super
+	class_type.new=function(...) 
+			local obj={}
+			do
+				local create
+				create = function(c,...)
+					if c.super then
+						create(c.super,...)
+					end
+					if c.ctor then
+						c.ctor(obj,...)
+					end
+				end
+ 
+				create(class_type,...)
+			end
+			setmetatable(obj,{ __index=_class[class_type] })
+			return obj
+		end
+	local vtbl={}
+	_class[class_type]=vtbl
+ 
+	setmetatable(class_type,{__newindex=
+		function(t,k,v)
+			vtbl[k]=v
+		end
+	})
+ 
+	if super then
+		setmetatable(vtbl,{__index=
+			function(t,k)
+				local ret=_class[super][k]
+				vtbl[k]=ret
+				return ret
+			end
+		})
+	end
+ 
+	return class_type
+end
+```
+
+创建基类：
+
+```lua
+base_type=class()			-- 定义一个基类 base_type
+ 
+function base_type:ctor(x)	-- 定义 base_type 的构造函数
+	print("base_type ctor")
+	self.x=x
+end
+ 
+function base_type:print_x()-- 定义一个成员函数 base_type:print_x
+	print(self.x)
+end
+ 
+function base_type:hello()	-- 定义另一个成员函数 base_type:hello
+	print("hello base_type")
+end
+```
+
+创建子类：
+
+```lua
+test=class(base_type)	-- 定义一个类 test 继承于 base_type
+ 
+function test:ctor()	-- 定义 test 的构造函数
+	print("test ctor")
+end
+ 
+function test:hello()	-- 重载 base_type:hello 为 test:hello
+	print("hello test")
+end
+```
+
+测试：
+
+```lua
+a=test.new(1)	-- 输出两行，base_type ctor 和 test ctor 。这个对象被正确的构造了。
+a:print_x()		-- 输出 1 ，这个是基类 base_type 中的成员函数。
+a:hello()		-- 输出 hello test ，这个函数被重载了。
 ```
 
