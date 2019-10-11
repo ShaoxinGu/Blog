@@ -40,7 +40,7 @@ categories: 学习笔记
 
 - 坐标变换，顾名思义，就是对顶点的坐标（即位置）进行某种变换。顶点着色器可以在这一步中改变顶点的位置，这在顶点动画中是非常有用的。例如，我们可以通过改变顶点位置来模拟水面、布料等。但需要注意的是，无论我们在顶点着色器中怎样改变顶点的位置，一个最基本的顶点着色器必须完成的一个工作是，把顶点坐标从模型空间转换到齐次裁剪空间。
 
-- 旧版Unity使用o.vertex = mul(UNITY_MVP, v.vertex);来完成顶点变换，而新版Unity使用o.vertex = UnityObjectToClipPos(v.vertex);来实现顶点变换。其功能就是把顶点坐标转换到齐次裁剪坐标系下，接着通常再由硬件做透视除法后，最终得到归一化的设备坐标（Nomalized Device Coordinates, NDC)。
+- ``旧版Unity``使用```o.vertex = mul(UNITY_MVP, v.vertex);```来完成顶点变换，而``新版Unity``使用```o.vertex = UnityObjectToClipPos(v.vertex);```来实现顶点变换。其功能就是把顶点坐标转换到齐次裁剪坐标系下，接着通常再由硬件做透视除法后，最终得到归一化的设备坐标（Nomalized Device Coordinates, NDC)。
 
 - 顶点着色器可以有不同的输出方式。最常见的输出路径是经光栅化后交给片元着色器进行处理。而在现代的Shader Model中，它还可以把数据发送给曲面细分着色器或几何着色器。
 
