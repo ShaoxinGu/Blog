@@ -126,8 +126,8 @@ gitalk: false
 # Valine Comment system. https://valine.js.org
 valine:
   enable: true # 如果你想使用valine，请将值设置为 true
-  app_id:  PiC8WTWyEJAvwelFCfLlnO0N-gzGzoHsz
-  app_key: dk4m3sh3U91jt2tnyNaUpV3q
+  appId:  PiC8WTWyEJAvwelFCfLlnO0N-gzGzoHsz
+  appKey: dk4m3sh3U91jt2tnyNaUpV3q
   notify: false # Mail notify
   verify: false # Verify code
   avatar: mm # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
