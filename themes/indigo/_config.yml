@@ -116,7 +116,7 @@ gitment: false
 #   client_secret:
 
 # use gitalk://github.com/gitalk/gitalk
-gitalk: true
+gitalk:
   owner: shaoxingu
   repo: shaoxingu.github.io
   client_id: 18b35c7f5f43c8de5f15
