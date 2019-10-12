@@ -117,6 +117,7 @@ gitment: false
 
 # use gitalk://github.com/gitalk/gitalk
 gitalk:
+  id: location.pathname
   owner: ShaoxinGu
   repo: shaoxingu.github.io
   client_id: 18b35c7f5f43c8de5f15
