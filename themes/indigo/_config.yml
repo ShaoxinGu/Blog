@@ -103,24 +103,29 @@ less:
     - source/css/style.less
 
 # 以下评论插件开启一个即可
+# 是否开启 livere
+livere:
+  livere_uid: MTAyMC80NzA0Ni8yMzU0Ng==
+
 # 是否开启 disqus
 disqus_shortname: false
+
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
-# 是否使用 gitment，https://github.com/imsun/gitment
 
-gitment:
-  owner: ShaoxinGu
-  repo: shaoxingu.github.io
-  client_id: 18b35c7f5f43c8de5f15
-  client_secret: 4912f50da5c438446cf0a7e19ba4aca34d68f1d5
+# 是否使用 gitment，https://github.com/imsun/gitment
+gitment: false
+#  owner:
+#  repo:
+#  client_id:
+#  client_secret:
 
 # use gitalk://github.com/gitalk/gitalk
 gitalk: false
-#  owner: ShaoxinGu
-#  repo: shaoxingu.github.io
-#  client_id: 18b35c7f5f43c8de5f15
-#  client_secret: 4912f50da5c438446cf0a7e19ba4aca34d68f1d5
+#  owner:
+#  repo:
+#  client_id:
+#  client_secret:
 
 # Valine Comment system. https://valine.js.org
 valine:
