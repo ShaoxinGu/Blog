@@ -103,10 +103,6 @@ less:
     - source/css/style.less
 
 # 以下评论插件开启一个即可
-# 是否开启 livere
-livere:
-  livere_uid: MTAyMC80NzA0Ni8yMzU0Ng==
-
 # 是否开启 disqus
 disqus_shortname: false
 
