@@ -61,10 +61,10 @@ show_last_updated: true
 share: true
 
 # 是否开启打赏，关闭 reward: false
-reward:
-  title: 谢谢大爷~
-  wechat: /img/wechat.jpg     #微信，关闭设为 false
-  alipay: /img/alipay.jpg     #支付宝，关闭设为 false
+reward: false
+#  title: 谢谢大爷~
+#  wechat: /img/wechat.jpg     #微信，关闭设为 false
+#  alipay: /img/alipay.jpg     #支付宝，关闭设为 false
 
 # 是否开启搜索
 search: true
@@ -105,15 +105,16 @@ less:
 # 以下评论插件开启一个即可
 # 是否开启 disqus
 disqus_shortname: false
+
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
+
 # 是否使用 gitment，https://github.com/imsun/gitment
 gitment: false
-# gitment:
-#   owner:
-#   repo:
-#   client_id:
-#   client_secret:
+#  owner:
+#  repo:
+#  client_id:
+#  client_secret:
 
 # use gitalk://github.com/gitalk/gitalk
 gitalk: false
@@ -124,13 +125,13 @@ gitalk: false
 
 # Valine Comment system. https://valine.js.org
 valine:
-  enable: false # 如果你想使用valine，请将值设置为 true
-  appId:  # your leancloud appId
-  appKey:  # your leancloud appKey
+  enable: true # 如果你想使用valine，请将值设置为 true
+  appId:  PiC8WTWyEJAvwelFCfLlnO0N-gzGzoHsz
+  appKey: dk4m3sh3U91jt2tnyNaUpV3q
   notify: false # Mail notify
   verify: false # Verify code
   avatar: mm # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
-  placeholder: Just go go # Comment Box placeholder
+  placeholder: 说点什么吧~ # Comment Box placeholder
   guest_info: nick,mail,link # Comment header info
   pageSize: 10 # comment list page size
 
@@ -157,7 +158,7 @@ visit_counter:
   site_pv: 站点总访问量：
 
 # 动态定义title
-#title_change:
+title_change: false
 #  normal: (つェ⊂)咦!又好了!
 #  leave: 死鬼去哪里了！
 
