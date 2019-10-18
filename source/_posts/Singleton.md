@@ -29,17 +29,17 @@ categories: 学习笔记
 class FileSystem
 {
 public:
-  	static FileSystem& instance()
-  	{
-    	// 惰性初始化
-    	if (instance_ == NULL) instance_ = new FileSystem();
-    	return *instance_;
-  	}
+    static FileSystem& instance()
+    {
+        // 惰性初始化
+        if (instance_ == NULL) instance_ = new FileSystem();
+        return *instance_;
+    }
 
 private:
-  	FileSystem() {}
+    FileSystem() {}
 
-  	static FileSystem* instance_;
+    static FileSystem* instance_;
 };
 ```
 
@@ -51,14 +51,14 @@ private:
 class FileSystem
 {
 public:
-  	static FileSystem& instance()
+    static FileSystem& instance()
   	{
-    	static FileSystem *instance = new FileSystem();
-    	return *instance;
+        static FileSystem *instance = new FileSystem();
+        return *instance;
   	}
 
 private:
-  	FileSystem() {}
+    FileSystem() {}
 };
 ```
 
@@ -74,23 +74,23 @@ private:
   class FileSystem
   {
   public:
-    	static FileSystem& instance();
+      static FileSystem& instance();
   
-    	virtual ~FileSystem() {}
-    	virtual char* readFile(char* path) = 0;
-    	virtual void  writeFile(char* path, char* contents) = 0;
+      virtual ~FileSystem() {}
+      virtual char* readFile(char* path) = 0;
+      virtual void  writeFile(char* path, char* contents) = 0;
   
   protected:
-    	FileSystem() {}
+      FileSystem() {}
   };
   
   FileSystem& FileSystem::instance()
   {
-  	#if PLATFORM == PLAYSTATION3
-      	static FileSystem *instance = new PS3FileSystem();
-   	#elif PLATFORM == WII
-      	static FileSystem *instance = new WiiFileSystem();
-    	#endif
+  #if PLATFORM == PLAYSTATION3
+  	static FileSystem *instance = new PS3FileSystem();
+  #elif PLATFORM == WII
+  	static FileSystem *instance = new WiiFileSystem();
+  #endif
   	return *instance;
   }
   ```
@@ -99,7 +99,7 @@ private:
 
 ## 为什么我们后悔使用它
 
-- **它是一个全局变量 **
+- **它是一个全局变量**
 
   - 让理解更加困难：全局变量的使用让我们除了关心当前函数之外，还需要关心全局变量的状态。而由于全局变量的全局访问性，我们可能要追踪整个代码库才能找到某个静态变量在什么地方被赋予了错误的值。
   - 促进了耦合的发生：全局变量具有全局可见性，新手程序员可以会在单例中#include 包含了其他模块的头文件。新手程序员用这种方法顺利地完成了任务，却破坏了框架留下了耦合。如果不用全局实例，那他这样做的时候将会遇到阻碍，这种阻碍会提醒他不该这样做。 通过控制对实例的访问，你控制了耦合。
@@ -111,7 +111,7 @@ private:
 
 - **惰性初始化从你那里剥夺了控制权**
 
-  - 如果初始化很耗时，那么如果初始化发生在游戏的高潮部分，会导致可见的掉帧和断续的游戏体验 。
+  - 如果初始化很耗时，而初始化发生在游戏的高潮部分，会导致可见的掉帧和断续的游戏体验 。
   -  游戏通常需要严格管理在堆上分配的内存来避免碎片。如果系统在初始化时分配到了堆上。我们需要知道初始化在何时发生， 这样我们才可以控制内存待在堆的哪里。  
 
 ## 那该如何是好
@@ -134,18 +134,18 @@ private:
     class GameObject
     {
     protected:
-      	Log& getLog() { return log_; }
+        Log& getLog() { return log_; }
     
     private:
-      	static Log& log_;
+        static Log& log_;
     };
     
     class Enemy : public GameObject
     {
-      	void doSomething()
-      	{
-        	getLog().write("I can log!");
-      	}
+        void doSomething()
+        {
+            getLog().write("I can log!");
+    	}
     };
     ```
 
@@ -155,20 +155,20 @@ private:
     class Game
     {
     public:
-      	static Game& instance() { return instance_; }
+        static Game& instance() { return instance_; }
     
-      	// 设置log_, et. al. ……
+        // 设置log_, et. al. ……
     
-      	Log&         getLog()         { return *log_; }
-      	FileSystem&  getFileSystem()  { return *fileSystem_; }
-      	AudioPlayer& getAudioPlayer() { return *audioPlayer_; }
+        Log&         getLog()         { return *log_; }
+        FileSystem&  getFileSystem()  { return *fileSystem_; }
+        AudioPlayer& getAudioPlayer() { return *audioPlayer_; }
     
     private:
-      	static Game instance_;
-    
-      	Log         *log_;
-      	FileSystem  *fileSystem_;
-      	AudioPlayer *audioPlayer_;
+        static Game instance_;
+        
+        Log         *log_;
+        FileSystem  *fileSystem_;
+        AudioPlayer *audioPlayer_;
     };
     ```
 
@@ -179,10 +179,10 @@ private:
 ```lua
 Singleton = {}
 function Singleton:new(o)
-	o = o or {}
-	setmetatable(o,self)
-	self.__index = self
-	return o
+    o = o or {}
+    setmetatable(o,self)
+    self.__index = self
+    return o
 end
  
 function Singleton:Instance()
