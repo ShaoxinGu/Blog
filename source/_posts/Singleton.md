@@ -29,17 +29,17 @@ categories: 学习笔记
 class FileSystem
 {
 public:
-    static FileSystem& instance()
-    {
-        // 惰性初始化
-        if (instance_ == NULL) instance_ = new FileSystem();
-        return *instance_;
-    }
+	static FileSystem& instance()
+	{
+		// 惰性初始化
+		if (instance_ == NULL) instance_ = new FileSystem();
+		return *instance_;
+	}
 
 private:
-    FileSystem() {}
+	FileSystem() {}
 
-    static FileSystem* instance_;
+	static FileSystem* instance_;
 };
 ```
 
@@ -51,14 +51,14 @@ private:
 class FileSystem
 {
 public:
-    static FileSystem& instance()
-  	{
-        static FileSystem *instance = new FileSystem();
-        return *instance;
-  	}
+	static FileSystem& instance()
+	{
+		static FileSystem* instance = new FileSystem();
+		return *instance;
+	}
 
 private:
-    FileSystem() {}
+	FileSystem() {}
 };
 ```
 
@@ -74,22 +74,22 @@ private:
   class FileSystem
   {
   public:
-      static FileSystem& instance();
+  	static FileSystem& instance();
   
-      virtual ~FileSystem() {}
-      virtual char* readFile(char* path) = 0;
-      virtual void  writeFile(char* path, char* contents) = 0;
+  	virtual ~FileSystem() {}
+  	virtual char* readFile(char* path) = 0;
+  	virtual void  writeFile(char* path, char* contents) = 0;
   
   protected:
-      FileSystem() {}
+  	FileSystem() {}
   };
   
   FileSystem& FileSystem::instance()
   {
   #if PLATFORM == PLAYSTATION3
-  	static FileSystem *instance = new PS3FileSystem();
+  	static FileSystem * instance = new PS3FileSystem();
   #elif PLATFORM == WII
-  	static FileSystem *instance = new WiiFileSystem();
+  	static FileSystem * instance = new WiiFileSystem();
   #endif
   	return *instance;
   }
@@ -134,17 +134,17 @@ private:
     class GameObject
     {
     protected:
-        Log& getLog() { return log_; }
+    	Log& getLog() { return log_; }
     
     private:
-        static Log& log_;
+    	static Log& log_;
     };
     
     class Enemy : public GameObject
     {
-        void doSomething()
-        {
-            getLog().write("I can log!");
+    	void doSomething()
+    	{
+    		getLog().write("I can log!");
     	}
     };
     ```
@@ -155,20 +155,20 @@ private:
     class Game
     {
     public:
-        static Game& instance() { return instance_; }
+    	static Game& instance() { return instance_; }
     
-        // 设置log_, et. al. ……
+    	// 设置log_, et. al. ……
     
-        Log&         getLog()         { return *log_; }
-        FileSystem&  getFileSystem()  { return *fileSystem_; }
-        AudioPlayer& getAudioPlayer() { return *audioPlayer_; }
+    	Log& getLog() { return *log_; }
+    	FileSystem& getFileSystem() { return *fileSystem_; }
+    	AudioPlayer& getAudioPlayer() { return *audioPlayer_; }
     
     private:
-        static Game instance_;
-        
-        Log         *log_;
-        FileSystem  *fileSystem_;
-        AudioPlayer *audioPlayer_;
+    	static Game instance_;
+    
+    	Log* log_;
+    	FileSystem* fileSystem_;
+    	AudioPlayer* audioPlayer_;
     };
     ```
 
@@ -184,17 +184,17 @@ function Singleton:new(o)
     self.__index = self
     return o
 end
- 
+
 function Singleton:Instance()
-	if not self.instance then
-		self.instance = self:new()
-	end
-	return self.instance
+    if not self.instance then
+        self.instance = self:new()
+    end
+    return self.instance
 end
 
 s1 = Singleton:Instance()
 s2 = Singleton:Instance()
-if s1 == s2 then  
-    print("两个对象是相同的实例")  
+if s1 == s2 then
+    print("两个对象是相同的实例")
 end
 ```
