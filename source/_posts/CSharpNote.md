@@ -1,3 +1,9 @@
+---
+title: C#学习笔记
+tags: C#
+categories: 学习笔记
+---
+
 # 基础
 
 ## 代码结构
