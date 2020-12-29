@@ -1,8 +1,7 @@
-
-# .deploy*/
-# node_modules/
-# public/
-# db.json
-# package.json
-# package-lock.json
-# *.log
+.deploy*/
+node_modules/
+public/
+db.json
+package.json
+package-lock.json
+*.log
