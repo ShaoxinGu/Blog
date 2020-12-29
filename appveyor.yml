@@ -20,7 +20,6 @@ install:
 #  - npm install hexo-helper-live2d --save
 
 build_script:
-  - hexo version
   - hexo clean
   - hexo generate
 
