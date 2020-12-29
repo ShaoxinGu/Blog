@@ -10,7 +10,6 @@ install:
   - npm update --save
   - npm install
   - npm install hexo-cli@3.1.0 -g
-  # - npm install –unsafe-perm –verbose -g hexo
   # - npm audit fix --force
 #  - npm install hexo-renderer-less --save
 #  - npm install hexo-generator-feed --save
