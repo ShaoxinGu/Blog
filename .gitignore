@@ -1,8 +1,8 @@
 
-.deploy*/
+# .deploy*/
 # node_modules/
-public/
+# public/
 # db.json
 # package.json
 # package-lock.json
-*.log
+# *.log

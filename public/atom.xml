@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Philip&#39;s Blog</title>
+  
+  <subtitle>不会美术的策划不是好程序。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://shaoxingu.github.io/"/>
+  <updated>2020-12-29T02:06:52.362Z</updated>
+  <id>https://shaoxingu.github.io/</id>
+  
+  <author>
+    <name>Philip</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#学习笔记</title>
+    <link href="https://shaoxingu.github.io/2020/12/29/CSharpNote/"/>
+    <id>https://shaoxingu.github.io/2020/12/29/CSharpNote/</id>
+    <published>2020-12-29T02:06:52.362Z</published>
+    <updated>2020-12-29T02:06:52.362Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><pre><code class="c#">using System; //引入命名空间（引用已有工具包）namespace Test //定义函数命名空间（工具包）&#123;    class Program //定义类（工具）    &#123;        static void Main(string[] args) //定义函数（工具的使用方法）        &#123;            Console.WriteLine(&quot;Hello World!&quot;);        &#125;    &#125;&#125;</code></pre><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="整形"><a href="#整形" class="headerlink" title="整形"></a>整形</h3><table><thead><tr><th align="center">数据类型</th><th align="center">别名</th><th align="center">字节数</th><th align="center">位数</th><th align="center">允许的值</th></tr></thead><tbody><tr><td align="center">sbyte</td><td align="center">System.Sbyte</td><td align="center">1</td><td align="center">8</td><td align="center">-127~128</td></tr><tr><td align="center">byte</td><td align="center">System.Byte</td><td align="center">1</td><td align="center">8</td><td align="center">0~255</td></tr><tr><td align="center">short</td><td align="center">System.Int16</td><td align="center">2</td><td align="center">16</td><td align="center">-32768~32767</td></tr><tr><td align="center">ushort</td><td align="center">System.UInt16</td><td align="center">2</td><td align="center">16</td><td align="center">0~65535</td></tr><tr><td align="center">int</td><td align="center">System.Int32</td><td align="center">4</td><td align="center">32</td><td align="center">-2147483648~2147483647</td></tr><tr><td align="center">int</td><td align="center">System.UInt32</td><td align="center">4</td><td align="center">32</td><td align="center">0~4294967295</td></tr><tr><td align="center">long</td><td align="center">System.Int64</td><td align="center">8</td><td align="center">64</td><td align="center">-9223372036854775808~9223372036854775807</td></tr><tr><td align="center">ulong</td><td align="center">System.UInt64</td><td align="center">8</td><td align="center">64</td><td align="center">0~18446744073709551615</td></tr></tbody></table><h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><table><thead><tr><th align="center">数据类型</th><th align="center">别名</th><th align="center">字节数</th><th align="center">位数</th><th align="center">标识</th></tr></thead><tbody><tr><td align="center">float</td><td align="center">System.Single</td><td align="center">4</td><td align="center">32</td><td align="center">f</td></tr><tr><td align="center">double</td><td align="center">System.Double</td><td align="center">8</td><td align="center">64</td><td align="center">d(默认)</td></tr><tr><td align="center">decimal</td><td align="center">System.Decimal</td><td align="center">16</td><td align="center">128</td><td align="center">m</td></tr></tbody></table><h3 id="简单类型"><a href="#简单类型" class="headerlink" title="简单类型"></a>简单类型</h3><table><thead><tr><th align="center">数据类型</th><th align="center">别名</th><th align="center">字节数</th><th align="center">位数</th><th align="center">允许的值</th></tr></thead><tbody><tr><td align="center">char</td><td align="center">System.Char</td><td align="center"><strong>2</strong></td><td align="center"><strong>16</strong></td><td align="center">一个Unicode字符</td></tr><tr><td align="center">bool</td><td align="center">System.Boolean</td><td align="center">1</td><td align="center">8</td><td align="center">布尔值：true或false</td></tr><tr><td align="center">string</td><td align="center">System.String</td><td align="center">—</td><td align="center">—</td><td align="center">一组字符</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;h2 id=&quot;代码结构&quot;&gt;&lt;a href=&quot;#代码结构&quot; class=&quot;headerlink&quot; title=&quot;代码结构&quot;&gt;&lt;/a&gt;代码结构&lt;/h
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C#" scheme="https://shaoxingu.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lua源码笔记</title>
+    <link href="https://shaoxingu.github.io/2020/01/15/LuaSource/"/>
+    <id>https://shaoxingu.github.io/2020/01/15/LuaSource/</id>
+    <published>2020-01-15T03:16:45.921Z</published>
+    <updated>2020-01-15T03:49:59.030Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>用Lua开发游戏已经有一段时间了，但是对Lua的理解还一直停留在浅层。最近想深入研究下，于是着手开始看Lua源码，并在本文记录知识点。</p><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><h3 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h3><h4 id="1-基本数据结构"><a href="#1-基本数据结构" class="headerlink" title="1.基本数据结构"></a>1.基本数据结构</h4><p>Lua的基本数据结构是一个类型union+type。相关的核心代码如下：</p><pre><code class="c++">/*** Common type for all collectable objects*/typedef struct GCObject GCObject;/*** Common Header for all collectable objects (in macro form, to be** included in other objects)*/#define CommonHeader \    GCObject *next;  \    lu_byte tt;      \    lu_byte marked/*** Common type has only the common header*/struct GCObject&#123;    CommonHeader;&#125;;/*** Tagged Values. This is the basic representation of values in Lua,** an actual value plus a tag with its type.*//*** Union of all Lua values*/typedef union Value &#123;    GCObject *gc;    /* collectable objects */    void *p;         /* light userdata */    int b;             /* booleans */    lua_CFunction f; /* light C functions */    lua_Integer i;   /* integer numbers */    lua_Number n;    /* float numbers */&#125; Value;#define TValuefields \    Value value_;    \    int tt_typedef struct lua_TValue&#123;    TValuefields;&#125; TValue;</code></pre><h4 id="2-GC算法和流程"><a href="#2-GC算法和流程" class="headerlink" title="2.GC算法和流程"></a>2.GC算法和流程</h4><ol><li><p>双色标记清除算法</p><p>在Lua5.0中的GC，是一次性不可被打断的操作，执行的算法是Mark-and-sweep算法，在执行GC操作的时候，会设置2种颜色，黑色和白色，然后执行GC的流程，大体的伪代码流程如下:</p><pre><code>每个新创建的对象为白色//初始化阶段遍历root链表中的对象，并将其加入到对象链表中    //标记阶段   当前对象链表中还有未被扫描的元素:        从中取出对象并将其标记为黑色       遍历这个对象关联的其他所有对象:         标记为黑色//回收阶段遍历所有对象:       如果为白色:           这些对象没有被引用，则执行回收    否则:         这些对象仍然被引用，需要保留</code></pre><p>整个过程是不能被打断的，这是为了避免一种情况：<br>如果可以被打断，在GC的过程中新创建一个对象<br>那么如果标记为白色，此时处于回收阶段，那么这个对象没有被扫描就会被回收；<br>如果标记为黑色，此时处于回收阶段，那么这个对象没有被扫描就会被保留<br>两种情况都不适合，所以只有让整个过程不可被打断，带来的问题就是造成gc的时候卡顿</p></li><li><p>三色标记清除算法</p><p>虽然是三色，本质是四色，颜色分为三种:</p><p><strong>白色:</strong> 当前对象为待访问状态，表示对象还未被gc标记过，也就是对象创建的初始状态； 同理，如果在gc完成后，仍然为白色，则说明当前对象没有被引用，则可以被清除回收</p><p><strong>灰色:</strong> 当前对象为待扫描状态，当前对象已经被扫描过，但是其引用的其他对象没有被扫描</p><p><strong>黑色:</strong> 当前对象已经扫描过，并且其引用的其他对象也被扫描过</p><p>其流程伪代码:</p><pre><code>每个新创建的对象为白色//初始化阶段   遍历root阶段中引用的对象，从白色设置为灰色，并放入到灰色节点列表中   //标记阶段    当灰色链表中还有未被扫描的元素:        从中去除一个对象并将其标记为黑色       遍历这个对象关联的其他所有对象:           如果是白色:            标记为灰色，并加入灰色链表中   //回收阶段  遍历所有对象:       如果为白色:         这些对象没有被引用，需要被回收    否则:        重新加入对象链表中等待下次gc   </code></pre><p>整个标记过程是可以被打断的，被打断后回来只需要接着执行标记过程即可，回收阶段是不可被打断的。</p><p>如何解决在标记阶段之后创建的对象为白色的问题?<br>分裂白色为两种白色，一种为当前白色 currentwhite， 一种为非当前白色 otherwhite，新创建的对象都为otherwhite，则在执行回收的时候，如果为otherwhite则不执行回收操作，等待下次gc的时候，会执行白色的轮换，则新创建的对象会进入下一轮GC。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;用Lua开发游戏已经有一段时间了，但是对Lua的理解还一直停留在浅层。最近想深入研究下，于是着手开始看Lua源码，并在本文记录知识点。&lt;/p
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Lua" scheme="https://shaoxingu.github.io/tags/Lua/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>知识点记录</title>
+    <link href="https://shaoxingu.github.io/2020/01/10/Trivial/"/>
+    <id>https://shaoxingu.github.io/2020/01/10/Trivial/</id>
+    <published>2020-01-10T03:40:32.680Z</published>
+    <updated>2020-01-20T09:43:03.473Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="知识点记录"><a href="#知识点记录" class="headerlink" title="知识点记录"></a>知识点记录</h1><p>平时总是能遇到各种各样零碎的知识点，有的太小了没有写下来，有的则是太零碎了不知道怎么写下来，久而久之很多以前知道的也忘了，以前遇到过的问题又再次成为阻碍，那感觉实在难受。所以开一个笔记专门记录一些小的知识点，等有空再把知识点细化单独整理成博客。相当于作为博客的题材库。</p><h2 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h2><h3 id="1-typedef与函数指针"><a href="#1-typedef与函数指针" class="headerlink" title="1.typedef与函数指针"></a>1.typedef与函数指针</h3><h4 id="typedef常见的用法"><a href="#typedef常见的用法" class="headerlink" title="typedef常见的用法"></a>typedef常见的用法</h4><p>相当于是给类型起一个别名</p><pre><code class="c++">typedef int myInt;</code></pre><h4 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h4><ul><li><p>返回类型(*函数名)(参数表)</p><pre><code>#include &lt;iostream&gt;using namespace std;//定义一个函数指针pFUN，它指向一个返回类型为char，有一个整型的参数的函数char (*pFun)(int);//定义一个返回类型为char，参数为int的函数//从指针层面上理解该函数，即函数的函数名实际上是一个指针，//该指针指向函数在内存中的首地址char glFun(int a)&#123;    cout &lt;&lt; a &lt;&lt; endl;    return &#39;r&#39;;&#125;int main()&#123;    //将函数glFun的地址赋值给变量pFun    pFun = glFun;    //*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。    cout&lt;&lt;(*pFun)(2)&lt;&lt;endl;    return 0;&#125;</code></pre></li><li><p>typedef  返回类型(*类型名)(参数表)</p><pre><code class="c++">#include &lt;iostream&gt;using namespace std;//定义了一种新类型PTRFUN//这种类型表示指向某种函数的指针，这种函数以一个int为参数并返回char类型//后面就可以像使用int,char一样使用PTRFUN来定义变量了。typedef char (*PTRFUN)(int); //定义一个返回类型为char，参数为int的函数char glFun(int a)&#123;    cout &lt;&lt; a &lt;&lt; endl;    return &#39;r&#39;;&#125;int main()&#123;    //将函数glFun的地址赋值给变量pFun    PTRFUN pFun = glFun;    //*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。    cout&lt;&lt;(*pFun)(2)&lt;&lt;endl;    return 0;&#125;</code></pre></li></ul><h3 id="2-枚举常量不能用做宏判断的条件"><a href="#2-枚举常量不能用做宏判断的条件" class="headerlink" title="2.枚举常量不能用做宏判断的条件"></a>2.枚举常量不能用做宏判断的条件</h3><p>比如下面的代码</p><pre><code class="c++">#include &lt;iostream&gt;#define PLATFORM PS4enum PLATFORM_TYPE &#123;    SWITCH,    PS4,&#125;;int main()&#123;#if PLATFORM == SWITCH        //判断语句1    std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;#elif PLATFORM == PS4        //判断语句2    std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;#endif    return 0;&#125;</code></pre><p>按照预期，如果#define PLATFORM SWITCH输出“Nintendo!”， 如果#define PLATFORM PS4则输出“Sony!”。</p><p>但是实际运行的结果总是“Nintendo!”，也就是判断语句1始终成立！</p><p>百思不得其解之后，我终于意识到条件编译是预编译阶段的事情，而enum的定义要等到编译阶段才会处理。也就是说在预编译阶段压根儿没有SWITCH和PS4这两个标识符。而且在 #if 之后，所有不能通过 #define 被替换为字面量的标识符和关键字都会被替换为0，因此也不会报错。所以实际上执行的判断语句是：</p><pre><code class="c++">#if 0 == 0        //判断语句1    std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;#elif 0 == 0    //判断语句2    std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;#endif</code></pre><p>所以才会有上面的现象。修改后逻辑终于正常了，代码如下：</p><pre><code class="c++">#include &lt;iostream&gt;#define PLATFORM PS4#define SWITCH 1#define PS4 2int main()&#123;#if PLATFORM == SWITCH        //判断语句1    std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;#elif PLATFORM == PS4        //判断语句2    std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;#endif    return 0;&#125;</code></pre><h3 id="3-C-C-的头文件"><a href="#3-C-C-的头文件" class="headerlink" title="3.C/C++的头文件"></a>3.C/C++的头文件</h3><p>保证同一个头文件不会被包含两次的方法有两个：</p><p>1.#ifndef</p><pre><code class="c++">#ifndef __SOMEFILE_H__#define __SOMEFILE_H__// 头文件声明、定义语句#endif</code></pre><p>这种方式受C/C++语言标准支持。</p><p>优点是它不仅可以保证同一个文件不会被包含多次，也能保证内容完全相同的多个文件（或者代码片段）也不会被同时包含。</p><p>缺点是宏名冲突时会出现一系列奇怪的问题。</p><p>2.#pragma once</p><pre><code class="c++">#pragma once// 头文件声明、定义语句</code></pre><p>#pragma once 一般由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，不适用于多个相同内容的文件。</p><p>优点是写法简洁，也不必再担心宏名冲突。</p><p>缺点是在存在多个相同内容的头文件时，还是会出现多次包含的情况。以及部分老的编译器可能不支持。</p><h3 id="4-垃圾回收算法"><a href="#4-垃圾回收算法" class="headerlink" title="4.垃圾回收算法"></a>4.垃圾回收算法</h3><ol><li><p>引用计数法</p></li><li><p>Mark-Sweep法（标记清除法）：一个优点就是可以避免循环引用，当A和B两个对象可能互相指向对方时，标记可以避免无限递归。缺点是会带来内存碎片。</p></li><li><p>三色标记法</p></li><li><p>分代收集</p></li></ol><h3 id="5-void-变量"><a href="#5-void-变量" class="headerlink" title="5.(void)变量"></a>5.(void)变量</h3><p>经常在一些驱动代码里面见到这种用法，变量前直接加（void）的语句，一开始对这种用法一头雾水，不知其何意！后经多方查阅资料了解，这只是一种防止编译器编译时报警告的用法。有些变量如果未曾使用，在编译时是会报错，从而有些导致编译不过，所以才会出现这种用法。而此语句在代码中没有具体意义，只是告诉编译器该变量已经使用了。</p><p>Lua的源代码中将其封装为一个叫做UNUSED的宏：</p><pre><code class="c">#define UNUSED(x) ((void)(x))</code></pre><h3 id="6运算符优先级"><a href="#6运算符优先级" class="headerlink" title="6运算符优先级"></a>6运算符优先级</h3><table><thead><tr><th>优先级</th><th>运算符</th><th>名称或含义</th><th>使用形式</th><th>结合方向</th></tr></thead><tbody><tr><td>1</td><td>[]</td><td>数组下标</td><td>数组名[常量表达式]</td><td>左到右</td></tr><tr><td></td><td>()</td><td>圆括号</td><td>（表达式）/函数名(形参表)</td><td></td></tr><tr><td></td><td>.</td><td>成员选择（对象）</td><td>对象.成员名</td><td></td></tr><tr><td></td><td>-&gt;</td><td>成员选择（指针）</td><td>对象指针-&gt;成员名</td><td></td></tr><tr><td>2</td><td>-</td><td>负号运算符</td><td>-表达式</td><td><strong>右到左</strong></td></tr><tr><td></td><td>(类型)</td><td>强制类型转换</td><td>(数据类型)表达式</td><td></td></tr><tr><td></td><td><strong>++</strong></td><td>自增运算符</td><td><strong>++变量名/变量名++</strong></td><td></td></tr><tr><td></td><td><strong>–</strong></td><td>自减运算符</td><td><strong>–变量名/变量名–</strong></td><td></td></tr><tr><td></td><td>*****</td><td>取值运算符</td><td><strong>*指针变量</strong></td><td></td></tr><tr><td></td><td><strong>&amp;</strong></td><td>取地址运算符</td><td><strong>&amp;变量名</strong></td><td></td></tr><tr><td></td><td>!</td><td>逻辑非运算符</td><td>!表达式</td><td></td></tr><tr><td></td><td>~</td><td>按位取反运算符</td><td>~表达式</td><td></td></tr><tr><td></td><td>sizeof</td><td>长度运算符</td><td>sizeof(表达式)</td><td></td></tr><tr><td>3</td><td>/</td><td>除</td><td>表达式/表达式</td><td>左到右</td></tr><tr><td></td><td>*</td><td>乘</td><td>表达式*表达式</td><td></td></tr><tr><td></td><td>%</td><td>余数（取模）</td><td>整型表达式/整型表达式</td><td></td></tr><tr><td>4</td><td>+</td><td>加</td><td>表达式+表达式</td><td>左到右</td></tr><tr><td></td><td>-</td><td>减</td><td>表达式-表达式</td><td></td></tr><tr><td>5</td><td>&lt;&lt;</td><td>左移</td><td>变量&lt;&lt;表达式</td><td>左到右</td></tr><tr><td></td><td>&gt;&gt;</td><td>右移</td><td>变量&gt;&gt;表达式</td><td></td></tr><tr><td>6</td><td>&gt;</td><td>大于</td><td>表达式&gt;表达式</td><td>左到右</td></tr><tr><td></td><td>&gt;=</td><td>大于等于</td><td>表达式&gt;=表达式</td><td></td></tr><tr><td></td><td>&lt;</td><td>小于</td><td>表达式&lt;表达式</td><td></td></tr><tr><td></td><td>&lt;=</td><td>小于等于</td><td>表达式&lt;=表达式</td><td></td></tr><tr><td>7</td><td>==</td><td>等于</td><td>表达式==表达式</td><td>左到右</td></tr><tr><td></td><td>!=</td><td>不等于</td><td>表达式!= 表达式</td><td></td></tr><tr><td>8</td><td>&amp;</td><td>按位与</td><td>表达式&amp;表达式</td><td>左到右</td></tr><tr><td>9</td><td><strong>^</strong></td><td>按位异或</td><td>表达式^表达式</td><td>左到右</td></tr><tr><td>10</td><td>|</td><td>按位或</td><td>表达式|表达式</td><td>左到右</td></tr><tr><td>11</td><td>&amp;&amp;</td><td>逻辑与</td><td>表达式&amp;&amp;表达式</td><td>左到右</td></tr><tr><td>12</td><td>||</td><td>逻辑或</td><td>表达式||表达式</td><td>左到右</td></tr><tr><td>13</td><td>?:</td><td>条件运算符</td><td>表达式1? 表达式2: 表达式3</td><td><strong>右到左</strong></td></tr><tr><td>14</td><td>=</td><td>赋值运算符</td><td>变量=表达式</td><td><strong>右到左</strong></td></tr><tr><td></td><td>/=</td><td>除后赋值</td><td>变量/=表达式</td><td></td></tr><tr><td></td><td>*=</td><td>乘后赋值</td><td>变量*=表达式</td><td></td></tr><tr><td></td><td>%=</td><td>取模后赋值</td><td>变量%=表达式</td><td></td></tr><tr><td></td><td>+=</td><td>加后赋值</td><td>变量+=表达式</td><td></td></tr><tr><td></td><td>-=</td><td>减后赋值</td><td>变量-=表达式</td><td></td></tr><tr><td></td><td>&lt;&lt;=</td><td>左移后赋值</td><td>变量&lt;&lt;=表达式</td><td></td></tr><tr><td></td><td>&gt;&gt;=</td><td>右移后赋值</td><td>变量&gt;&gt;=表达式</td><td></td></tr><tr><td></td><td>&amp;=</td><td>按位与后赋值</td><td>变量&amp;=表达式</td><td></td></tr><tr><td></td><td>^=</td><td>按位异或后赋值</td><td>变量^=表达式</td><td></td></tr><tr><td></td><td>|=</td><td>按位或后赋值</td><td>变量|==表达式</td><td></td></tr><tr><td>15</td><td>,</td><td>逗号运算符</td><td>表达式,表达式,…</td><td>左到右</td></tr></tbody></table><h3 id="7-定义和声明"><a href="#7-定义和声明" class="headerlink" title="7.定义和声明"></a>7.定义和声明</h3><p>关于定义和声明的定义，C＋＋primer的解释是这样的：</p><p>变量的定义（definition）:用于为变量分配存储空间，还可以为变量指定初始值。在一个程序中，变量有且仅有一个定义；<br>变量的声明（declaration）：用于向程序表明变量的类型和名字。</p><p><strong>定义也是声明：当定义变量时我们声明了它的类型和名字。</strong></p><p>可以通过使用extern关键字声明变量名而不定义它。</p><p>任何变量或函数等，都是要求先声明再使用。某些情况下，要使用的变量或函数还没有定义，则需要<strong>前向声明</strong>。</p><h4 id="关于前向声明（forward-declaration）："><a href="#关于前向声明（forward-declaration）：" class="headerlink" title="关于前向声明（forward declaration）："></a>关于前向声明（forward declaration）：</h4><ul><li>前向声明能显著缩短编译链接时间。</li><li>当两个定义互相使用对方时，需要使用前向声明打破循环。</li><li>在定义一个类型时如果用到了自身的指针时，需要使用前向声明。</li></ul><h3 id="8-字节对齐"><a href="#8-字节对齐" class="headerlink" title="8.字节对齐"></a>8.字节对齐</h3><p>字节对齐基于三条原则：</p><ol><li>数据成员对齐规则：结构体（struct）的数据成员，第一个数据成员放在offset为0的地方，之后的每个数据成员存储的起始位置要从该成员大小的整数倍开始（比如int在32位机子上为4字节，所以要从4的整数倍地址开始存储）。</li><li>结构体作为成员：如果一个结构体里同时包含结构体成员，则结构体成员要从其内部最大元素大小的整数倍地址开始存储（如struct a里有struct b,b里有char,int ,double等元素，那么b应该从8(即double类型的大小)的整数倍开始存储）。</li><li>结构体的总大小：即sizeof的结果。在按之前的对齐原则计算出来的大小的基础上，必须还得是其内部最大成员的整数倍，不足的要补齐（如struct里最大为double，现在计算得到的已经是11，则总大小为16）。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;知识点记录&quot;&gt;&lt;a href=&quot;#知识点记录&quot; class=&quot;headerlink&quot; title=&quot;知识点记录&quot;&gt;&lt;/a&gt;知识点记录&lt;/h1&gt;&lt;p&gt;平时总是能遇到各种各样零碎的知识点，有的太小了没有写下来，有的则是太零碎了不知道怎么写下来，久而久之很多以前知道的也
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="其他" scheme="https://shaoxingu.github.io/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单例模式</title>
+    <link href="https://shaoxingu.github.io/2019/10/15/Singleton/"/>
+    <id>https://shaoxingu.github.io/2019/10/15/Singleton/</id>
+    <published>2019-10-15T12:18:36.190Z</published>
+    <updated>2019-10-18T08:10:35.434Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><blockquote><p> 保证一个类只有一个实例，并且提供了访问该实例的全局访问点。</p></blockquote><p>单例模式或许是游戏开发中最常用的设计模式了。<br>在开发游戏时，开发者通常会为每个子系统定义单例类。<br>这些单例类负责统一管理某个系统，通常被称为管理器（manager）。<br>例如常见的UI管理器（UIManager）、场景管理器（SceneManager）等。</p><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><ul><li><strong>保证一个类只有一个实例。</strong>有时候，如果类存在多个实例就不能正确的运行。这种类的特点是，对这些类进行调用的时候必须接触之前所有的操作。如果这些操作的发生在不同的实例，一个实例就无法知道另一个实例的操作，也就无法正常地运行了。</li><li><strong>提供了访问该实例的全局访问点。</strong>有时候，游戏中的不同系统都会使用同一个类。 如果这些系统不能创建这个类的实例，那这个类就需要提供获取它实例的全局方法。</li></ul><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><a href="https://gpp.tkchu.me/singleton.html">GPP（Game Programming Patterns）</a>中以一个文件系统封装类作为例子。</p><p>经典的C++实现方案:</p><pre><code class="C++">class FileSystem&#123;public:    static FileSystem&amp; instance()    &#123;        // 惰性初始化        if (instance_ == NULL) instance_ = new FileSystem();        return *instance_;    &#125;private:    FileSystem() &#123;&#125;    static FileSystem* instance_;&#125;;</code></pre><p>静态的<code>instance_</code>成员保存了一个类的实例， 私有的构造器保证了它是<strong>唯一</strong>的。 公开的静态方法<code>instance()</code>让任何地方的代码都能访问实例。 在首次被请求时，它同样负责惰性实例化该单例。 </p><p>线程安全的现代C++实现方案：</p><pre><code class="C++">class FileSystem&#123;public:    static FileSystem&amp; instance()    &#123;        static FileSystem* instance = new FileSystem();        return *instance;    &#125;private:    FileSystem() &#123;&#125;&#125;;</code></pre><h2 id="为什么我们使用它"><a href="#为什么我们使用它" class="headerlink" title="为什么我们使用它"></a>为什么我们使用它</h2><ul><li><p><strong>如果没人用，就不必创建实例。</strong> 这种惰性初始化为节约内存和CPU资源带来了好处。</p></li><li><p><strong>它在运行时实例化。</strong> 单例通常的替代方案是使用含有静态成员变量的类，但是静态成员是自动初始化的。编译器在main()运行前初始化静态变量，而且初始化的顺序不可控，这意味着它们的相互依赖不可靠。而单例模式的惰性初始化没有这个问题。</p></li><li><p><strong>可继承单例。</strong>  单例可继承。这意味着单例模式可以配合多态性写出优美的代码。核心代码如下：</p><pre><code class="lua">class FileSystem&#123;public:   static FileSystem&amp; instance();   virtual ~FileSystem() &#123;&#125;   virtual char* readFile(char* path) = 0;   virtual void  writeFile(char* path, char* contents) = 0;protected:   FileSystem() &#123;&#125;&#125;;FileSystem&amp; FileSystem::instance()&#123;#if PLATFORM == PLAYSTATION3   static FileSystem * instance = new PS3FileSystem();#elif PLATFORM == WII   static FileSystem * instance = new WiiFileSystem();#endif   return *instance;&#125;</code></pre><p>通过一个简单的编译器转换，我们把文件系统包装类绑定到合适的具体类型上。 整个代码库都可以使用<code>FileSystem::instance()</code>接触到文件系统，而无需和任何平台相关的代码耦合。耦合发生在为特定平台写的<code>FileSystem</code>类实现文件中。 </p></li></ul><h2 id="为什么我们后悔使用它"><a href="#为什么我们后悔使用它" class="headerlink" title="为什么我们后悔使用它"></a>为什么我们后悔使用它</h2><ul><li><p><strong>它是一个全局变量</strong></p><ul><li>让理解更加困难：全局变量的使用让我们除了关心当前函数之外，还需要关心全局变量的状态。而由于全局变量的全局访问性，我们可能要追踪整个代码库才能找到某个静态变量在什么地方被赋予了错误的值。</li><li>促进了耦合的发生：全局变量具有全局可见性，新手程序员可以会在单例中#include 包含了其他模块的头文件。新手程序员用这种方法顺利地完成了任务，却破坏了框架留下了耦合。如果不用全局实例，那他这样做的时候将会遇到阻碍，这种阻碍会提醒他不该这样做。 通过控制对实例的访问，你控制了耦合。</li><li>对并行不友好： 当我们将某些东西转为全局变量时，我们创建了一块每个线程都能看到并访问的内存， 却不知道其他线程是否正在使用那块内存。 这种方式带来了死锁，竞争状态，以及其他很难解决的线程同步问题。</li></ul></li><li><p><strong>它能在你只有一个问题的时候解决两个</strong></p><p>正如之前的描述里写的，单例模式解决了两个问题。如果我们只有其中一个问题呢？ 保证实例是唯一存在的是很有用的，但是谁告诉我们要让每个人都能接触到它？ 同样，全局接触很方便，但是必须禁止存在多个实例吗？这是一个奇怪的约束，比如我们为了便利的访问把一个类改成了单例，却发现这个类无法创建不同的实例了。</p></li><li><p><strong>惰性初始化从你那里剥夺了控制权</strong></p><ul><li>如果初始化很耗时，而初始化发生在游戏的高潮部分，会导致可见的掉帧和断续的游戏体验 。</li><li>游戏通常需要严格管理在堆上分配的内存来避免碎片。如果系统在初始化时分配到了堆上。我们需要知道初始化在何时发生， 这样我们才可以控制内存待在堆的哪里。  </li></ul></li></ul><h2 id="那该如何是好"><a href="#那该如何是好" class="headerlink" title="那该如何是好"></a>那该如何是好</h2><ul><li><p><strong>看看你是不是真正地需要类</strong></p><p>有些时候我们并不需要管理器来管理某些对象，而是让这些对象管理自己。</p></li><li><p><strong>将类限制为单一的实例</strong></p><p>我们可以通过别的方法保证一个类只有单一实例，比如用一个bool值记录，而无需提供全局的接触点。</p></li><li><p><strong>为了给实例提供方便的访问方法</strong></p><ul><li><p>传进来：在用其他更加繁杂的方法前，考虑一下这个解决方案。 </p></li><li><p>从基类中获得：很多游戏架构有浅层但是宽泛的继承层次，通常只有一层深。举个例子，你也许有<code>GameObject</code>基类，每个游戏中的敌人或者对象都继承它。使用这样的架构，很大一部分游戏代码会存在于这些“子”推导类中。这就意味着这些类已经有了对同样事物的相同获取方法：它们的<code>GameObject</code>基类。我们可以利用这点： </p><pre><code class="c++">class GameObject&#123;protected:    Log&amp; getLog() &#123; return log_; &#125;private:    static Log&amp; log_;&#125;;class Enemy : public GameObject&#123;    void doSomething()    &#123;        getLog().write(&quot;I can log!&quot;);    &#125;&#125;;</code></pre></li><li><p>从已经是全局的东西中获取： 大多数代码库仍有一些全局可用对象，比如一个代表了整个游戏状态的<code>Game</code>或<code>World</code>对象。我们可以让现有的全局对象捎带需要的东西，来减少全局变量类的数目。不让<code>Log</code>，<code>FileSystem</code>和<code>AudioPlayer</code>都变成单例，而是这样做：</p><pre><code class="c++">class Game&#123;public:    static Game&amp; instance() &#123; return instance_; &#125;    // 设置log_, et. al. ……    Log&amp; getLog() &#123; return *log_; &#125;    FileSystem&amp; getFileSystem() &#123; return *fileSystem_; &#125;    AudioPlayer&amp; getAudioPlayer() &#123; return *audioPlayer_; &#125;private:    static Game instance_;    Log* log_;    FileSystem* fileSystem_;    AudioPlayer* audioPlayer_;&#125;;</code></pre></li><li><p>从服务定位器中获得： 定义一个类，存在的唯一目标就是为对象提供全局访问。 这种常见的模式被称为服务器定位模式，<a href="https://gpp.tkchu.me/service-locator.html">有单独讲它的章节</a>。</p></li></ul></li></ul><h2 id="Lua中的实现"><a href="#Lua中的实现" class="headerlink" title="Lua中的实现"></a>Lua中的实现</h2><pre><code class="lua">Singleton = &#123;&#125;function Singleton:new(o)    o = o or &#123;&#125;    setmetatable(o,self)    self.__index = self    return oendfunction Singleton:Instance()    if not self.instance then        self.instance = self:new()    end    return self.instanceends1 = Singleton:Instance()s2 = Singleton:Instance()if s1 == s2 then    print(&quot;两个对象是相同的实例&quot;)end</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt; 保证一个类只有一个实例，并且提供了访问该实例的全局访问点。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="设计模式" scheme="https://shaoxingu.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lua的闭包</title>
+    <link href="https://shaoxingu.github.io/2019/10/14/Closure/"/>
+    <id>https://shaoxingu.github.io/2019/10/14/Closure/</id>
+    <published>2019-10-14T07:31:14.326Z</published>
+    <updated>2019-10-14T07:35:55.558Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><blockquote><p> 闭包是一个函数以及它的 upvalues。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;闭包&quot;&gt;&lt;a href=&quot;#闭包&quot; class=&quot;headerlink&quot; title=&quot;闭包&quot;&gt;&lt;/a&gt;闭包&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt; 闭包是一个函数以及它的 upvalues。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Lua" scheme="https://shaoxingu.github.io/tags/Lua/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UnityShader笔记【一】</title>
+    <link href="https://shaoxingu.github.io/2019/10/14/ShaderNote1/"/>
+    <id>https://shaoxingu.github.io/2019/10/14/ShaderNote1/</id>
+    <published>2019-10-14T02:12:32.224Z</published>
+    <updated>2019-10-14T02:12:32.224Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="应用阶段"><a href="#应用阶段" class="headerlink" title="应用阶段"></a>应用阶段</h1><h2 id="把数据加载到显存中"><a href="#把数据加载到显存中" class="headerlink" title="把数据加载到显存中"></a>把数据加载到显存中</h2><ul><li><p>所有渲染所需的数据都需要从硬盘（Hard Disk Drive，HDD）中加载到系统内存（Random Access Memory，RAM）中。然后，网格和纹理等数据又被加载到显卡上的存储空间——显存（Video Random Access Memory， VRAM）中。这是因为，显卡对于显存的访问更快，而且大多数显卡对于RAM没有直接的访问权利。</p></li><li><p>渲染所需的数据除了纹理和网格之外，还包括顶点的位置信息、法线方向、顶点颜色、纹理坐标等。</p></li><li><p>当把数据加载到显存中后，RAM中的数据就可以移除了。但对于一些数据来说，CPU仍然需要访问它们（例如，我们希望CPU可以访问网格数据来进行碰撞检测），那么我们可能就不希望这些数据被移除，因为从硬盘加载到RAM的过程是十分耗时的。</p></li></ul><h2 id="设置渲染状态"><a href="#设置渲染状态" class="headerlink" title="设置渲染状态"></a>设置渲染状态</h2><ul><li>什么是渲染状态呢？一个通俗的解释就是，这些状态定义了场景中的网格是怎样被渲染的。例如，使用哪个顶点着色器（Vertex Shader）/片元着色器（Fragment Shader）、光源属性、材质等。如果我们没有更改渲染状态，那么所有的网格都将使用同一种渲染状态。</li></ul><h2 id="调用DrawCall"><a href="#调用DrawCall" class="headerlink" title="调用DrawCall"></a>调用DrawCall</h2><ul><li><p>DrawCall就是一个命令，它的发起方是CPU，接收方是GPU。这个命令仅仅会指向一个需要被渲染的图元（premitives）列表，而不会再包含任何材质信息。</p></li><li><p>当给定了一个DrawCall时，GPU就会根据渲染状态（例如材质、纹理、着色器等）和所有输入的顶点数据来进行计算，最终输出成屏幕上显示的那些漂亮的像素。</p></li><li><p>DrawCall的调用次数会直接影响性能，应该尽量减少DrawCall调用次数。</p></li><li><p>另外，CPU和GPU是并行工作的，通过一个命令缓冲区（可以理解为队列）来实现，CPU向命令缓冲区中添加命令，GPU向命令缓冲区读取命令。</p></li></ul><h1 id="几何阶段"><a href="#几何阶段" class="headerlink" title="几何阶段"></a>几何阶段</h1><blockquote><p>在这个阶段，顶点将经历以下几个阶段：</p><p><strong>模型坐标系</strong> -&gt; 模型变换 -&gt; <strong>世界坐标系</strong>  -&gt; 视图变换 -&gt; <strong>观察坐标系</strong> -&gt; 投影变换 -&gt; <strong>规范化的观察空间</strong> -&gt; 屏幕映射 -&gt; <strong>屏幕坐标系</strong></p></blockquote><h2 id="顶点着色器（Vertex-Shader）"><a href="#顶点着色器（Vertex-Shader）" class="headerlink" title="顶点着色器（Vertex Shader）"></a>顶点着色器（Vertex Shader）</h2><ul><li>顶点着色器是完全可编程的，它通常用于实现顶点的空间变换、顶点着色等功能。</li><li>顶点着色器是流水线的第一个阶段，它的输入来自于CPU。顶点着色器的处理单位是顶点，也就是说，输入进来的每个顶点都会调用一次顶点着色器。顶点着色器本身不可以创建或者销毁任何顶点，而且无法得到顶点与顶点之间的关系。例如，我们无法得知两个顶点是否属于同一个三角网格。但正是因为这样的相互独立性，GPU可以利用本身的特征并行化处理每一个顶点，这意味着这一阶段的处理速度会很快。</li><li>顶点着色器需要完成的工作主要有：坐标变换和逐顶点光照。</li><li>坐标变换，顾名思义，就是对顶点的坐标（即位置）进行某种变换。顶点着色器可以在这一步中改变顶点的位置，这在顶点动画中是非常有用的。例如，我们可以通过改变顶点位置来模拟水面、布料等。但需要注意的是，无论我们在顶点着色器中怎样改变顶点的位置，一个最基本的顶点着色器必须完成的一个工作是，把顶点坐标从模型空间转换到齐次裁剪空间。</li><li><code>旧版Unity</code>使用<code>o.vertex = mul(UNITY_MVP, v.vertex);</code>来完成顶点变换，而<code>新版Unity</code>使用<code>o.vertex = UnityObjectToClipPos(v.vertex);</code>来实现顶点变换。其功能就是把顶点坐标转换到齐次裁剪坐标系下，接着通常再由硬件做透视除法后，最终得到归一化的设备坐标（Nomalized Device Coordinates, NDC)。</li><li>顶点着色器可以有不同的输出方式。最常见的输出路径是经光栅化后交给片元着色器进行处理。而在现代的Shader Model中，它还可以把数据发送给曲面细分着色器或几何着色器。</li></ul><h2 id="几何-曲面细分着色器"><a href="#几何-曲面细分着色器" class="headerlink" title="几何/曲面细分着色器"></a>几何/曲面细分着色器</h2><ul><li>几何着色器和曲面细分着色器通常被合在一起成为几何/曲面细分着色器。</li><li>几何/曲面细分着色器是一个可选的操作。</li></ul><h3 id="几何着色器（Geometry-Shader）"><a href="#几何着色器（Geometry-Shader）" class="headerlink" title="几何着色器（Geometry Shader）"></a>几何着色器（Geometry Shader）</h3><ul><li>几何着色器的输入是顶点数据。它可以对图元的顶点进行操作，它可以高效地创建和删除几何图元。</li></ul><h3 id="曲面细分着色器（Tessellation-Shader）"><a href="#曲面细分着色器（Tessellation-Shader）" class="headerlink" title="曲面细分着色器（Tessellation Shader）"></a>曲面细分着色器（Tessellation Shader）</h3><ul><li>曲面细分着色器可以通过增加顶点，让现有的多边形网格更加逼近曲面。</li></ul><h2 id="裁剪（Clipping）"><a href="#裁剪（Clipping）" class="headerlink" title="裁剪（Clipping）"></a>裁剪（Clipping）</h2><ul><li><p>由于我们的场景可能会很大，而摄像机的视野范围很有可能不会覆盖所有的场景物体，一个很自然的想法就是，那些不在摄像机视野范围内的物体不需要被处理。而裁剪就是为了完成这个目的而被提出来。</p></li><li><p>一个图元与摄像机视野的关系有3种：完全在视野内、部分在视野内、完全在视野外。完全在视野内的图元就继续传递给下一个流水线阶段，完全在视野外的图元不会继续向下传递，以为它们不需要被渲染。而那些部分在视野内的图元需要进行一个处理，这就是裁剪。例如，一条线段的一个顶点在视野内，而另一个顶点不在视野内，那么在视野外部的顶点应该使用一个新的顶点来代替，这个新的顶点位于这条线段和视野边界的交点处。</p></li><li><p>和顶点着色器不同，这一步是不可编程的，即我们无法通过编程来控制裁剪的过程，而是硬件上的固定操作，但我们可以自定义一个裁剪操作来对这一步进行配置。</p></li></ul><h2 id="屏幕映射（Screen-Mapping）"><a href="#屏幕映射（Screen-Mapping）" class="headerlink" title="屏幕映射（Screen Mapping）"></a>屏幕映射（Screen Mapping）</h2><ul><li><p>屏幕映射的任务是把每个图元的x和y坐标转换到屏幕坐标系（Screen Coordinates）下。屏幕坐标系是一个二维坐标系，它和我们用于显示画面的分辨率有很大关系。</p></li><li><p>屏幕坐标系和z坐标一起构成了一个坐标系，叫做窗口坐标系（Window Coordinates）。这些值会一起被传递到光栅化阶段。</p></li></ul><h1 id="光栅化阶段"><a href="#光栅化阶段" class="headerlink" title="光栅化阶段"></a>光栅化阶段</h1><h2 id="三角形设置（Triangle-Setup）"><a href="#三角形设置（Triangle-Setup）" class="headerlink" title="三角形设置（Triangle Setup）"></a>三角形设置（Triangle Setup）</h2><ul><li>将几何阶段传过来的顶点数据进行处理，将顶点连成三角网格。</li></ul><h2 id="三角形遍历（Triangle-Traversal）"><a href="#三角形遍历（Triangle-Traversal）" class="headerlink" title="三角形遍历（Triangle Traversal）"></a>三角形遍历（Triangle Traversal）</h2><ul><li>三角形遍历的输入就是三角形设置的结果。</li><li>根据顶点信息，计算得到覆盖三角网格的像素位置，对于的这些像素就生成一个片元（fragment）。</li><li>而片元中每个像素的状态都是对三个顶点的信息进行插值得到的。</li></ul><h2 id="片元着色器（Fragment-Shader）"><a href="#片元着色器（Fragment-Shader）" class="headerlink" title="片元着色器（Fragment Shader）"></a>片元着色器（Fragment Shader）</h2><ul><li>这是一个可编程的阶段</li><li>根据之前的片元信息，计算每个片元的颜色值。</li><li>这个阶段可以完成很多重要的渲染技术，比如纹理贴图。</li></ul><h2 id="逐片元操作（Per-Fragment-Operations）"><a href="#逐片元操作（Per-Fragment-Operations）" class="headerlink" title="逐片元操作（Per-Fragment Operations）"></a>逐片元操作（Per-Fragment Operations）</h2><ul><li>在DirectX中又叫做输出合并阶段（Output-Merger）。</li><li>这里将每个片元的深度和颜色与帧缓存结合在一起。每个像素的颜色都是混合的结果。</li></ul><h2 id="生成屏幕图像"><a href="#生成屏幕图像" class="headerlink" title="生成屏幕图像"></a>生成屏幕图像</h2><ul><li>显示图像！</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;应用阶段&quot;&gt;&lt;a href=&quot;#应用阶段&quot; class=&quot;headerlink&quot; title=&quot;应用阶段&quot;&gt;&lt;/a&gt;应用阶段&lt;/h1&gt;&lt;h2 id=&quot;把数据加载到显存中&quot;&gt;&lt;a href=&quot;#把数据加载到显存中&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Unity" scheme="https://shaoxingu.github.io/tags/Unity/"/>
+    
+      <category term="Shader" scheme="https://shaoxingu.github.io/tags/Shader/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lua实现面向对象</title>
+    <link href="https://shaoxingu.github.io/2019/10/11/LuaOOP/"/>
+    <id>https://shaoxingu.github.io/2019/10/11/LuaOOP/</id>
+    <published>2019-10-11T02:33:27.412Z</published>
+    <updated>2019-10-11T06:16:03.310Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>以下描述出自《Program in Lua》中文版：</p><blockquote><p>​        一些面向对象的语言中提供了类的概念，作为创建对象的模板。在这些语言里，对象是类的实例。Lua 不存在类的概念，每个对象定义他自己的行为并拥有自己的形状（shape）。然而，依据基于原型（prototype）的语言比如 Self 和 NewtonScript，在 Lua中仿效类的概念并不难。在这些语言中，对象没有类。相反，每个对象都有一个 prototype（原型），当调用不属于对象的某些操作时，会最先会到 prototype 中查找这些操作。在这类语言中实现类（class）的机制，我们创建一个对象，作为其它对象的原型即可（原型对象为类，其它对象为类的 instance）。类与 prototype 的工作机制相同，都是定义了特定对象的行为。</p></blockquote><h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p>Lua的作者之一<a href="https://en.wikipedia.org/wiki/Roberto_Ierusalimschy">Roberto Lerusalimschy</a>在《Program in Lua》书中推荐了<a href="http://www.lua.org/pil/16.html">一种实现LuaOO的方案</a>，这种方案很简单也很容易理解。</p><p>在Lua里，类和实例都是table。在继承或实例化的时候，类会被赋值给实例或子类metatable的__index。</p><p>核心代码其实就这几行：</p><pre><code class="lua">Class = &#123;&#125;function Class:new (o)    o = o or &#123;&#125;   -- create object if user does not provide one    setmetatable(o, self)    self.__index = self    return oend</code></pre><p>具体的案例如下：</p><pre><code class="lua">Base = &#123;&#125;function Base:new (o)    o = o or &#123;&#125;   -- create object if user does not provide one    setmetatable(o, self)    self.__index = self    return oendfunction Base:Test1()    print(&quot;Base Test1&quot;)endfunction Base:Test2()    print(&quot;Base Test2&quot;)end--Child既可以说是Base类的实例，也可以说是Base类的子类，因为它们本质上都是table对象Child = Base:new()function Child:Test1() --Child类重写了Test1方法    print(&quot;Child Test1&quot;)endlocal a = Base:new()    --生成一个Base类的实例a:Test1()               --将打印&quot;Base Test1&quot;a:Test2()               --将打印&quot;Base Test2&quot;local b = Child:new()   --生成一个Child类的实例b:Test1()               --将打印&quot;Child Test1&quot;b:Test2()               --将打印&quot;Base Test2&quot;,调用的是父类的方法</code></pre><h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>这个方案是我在工作中接触到的，算是方案一的升级版。</p><p>核心代码如下：</p><pre><code class="lua">-- 所有类都会继承自这个类，真·基类Class = &#123;__ClassType = &quot;Class&quot;&#125;    ALL_CLASS = ALL_CLASS or &#123;&#125;function Class:Inherit(ClassName, o)    o = o or &#123;&#125;    o.mt = &#123; __index = o&#125;    assert(ClassName, &quot;必须要有类名&quot;)    assert(not (ClassName and ALL_CLASS[ClassName]), string.format(&quot;该类已存在： %s&quot;, ClassName))    o.__ClassType = ClassName    ALL_CLASS[ClassName] = true    o.__InheritMap = &#123;[self:GetType()] = true &#125;  -- 记录继承类型    o.__InheritSelf = false    if self.__InheritMap then        for UpType, _ in pairs(self.__InheritMap) do            o.__InheritMap[UpType] = true        end    end    setmetatable(o, &#123;__index = self&#125;)    return oendfunction Class:IsSubObj(ObjType)    return self:GetTypeMap()[ObjType]endfunction Class:GetTypeMap()    local clsSelf = getmetatable(self)    if clsSelf then        local Temp = clsSelf.__index        if not Temp.__InheritSelf then            Temp.__InheritMap[Temp:GetType()] = true            Temp.__InheritSelf = true        end        return Temp.__InheritMap    end    return &#123;&#125;endfunction Class:New(...)    local o = &#123;&#125;    setmetatable(o, &#123;__index = self&#125;)    if o.Ctor then o:Ctor(...) end --调用构造函数    return oendfunction Class:Ctor() endfunction Class:InClass() return true endfunction Class:OnCreate() endfunction Class:OnDestroy() endfunction Class:GetType()    return self.__ClassType end--获取一个class的父类function Super(Class)    return getmetatable(Class).__indexend--判断一个类是否是类的子类 &amp; 判断一个对象否是另一个类的实例function IsSub(Obj, Base)    local Temp = Obj    while  1 do     --循环回溯metatable        local mt = getmetatable(Temp)        if mt then            Temp = mt.__index            if Temp == Base then                return true            end        else            return false        end    endend</code></pre><p>示例如下：</p><pre><code class="lua">Base = Base or Class:Inherit(&quot;Base&quot;)function Base:Test1()    print(&quot;Base Test1&quot;)endfunction Base:Test2()    print(&quot;Base Test2&quot;)endChild = Child or Base:Inherit(&quot;Child&quot;)function Child:Test1()  --Child类重写了Test1方法    print(&quot;Child Test1&quot;)endlocal a = Base:new()    --生成一个Base类的实例a:Test1()               --将打印&quot;Base Test1&quot;a:Test2()               --将打印&quot;Base Test2&quot;local b = Child:new()   --生成一个Child类的实例b:Test1()               --将打印&quot;Child Test1&quot;b:Test2()               --将打印&quot;Base Test2&quot;,调用的是父类的方法</code></pre><h2 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h2><p>这个是云风提供的方案：<a href="https://blog.codingnow.com/cloud/LuaOO">博客地址</a>。</p><pre><code class="lua">local _class=&#123;&#125;function class(super)    local class_type=&#123;&#125;    class_type.ctor=false    class_type.super=super    class_type.new=function(...)             local obj=&#123;&#125;            do                local create                create = function(c,...)                    if c.super then                        create(c.super,...)                    end                    if c.ctor then                        c.ctor(obj,...)                    end                end                create(class_type,...)            end            setmetatable(obj,&#123; __index=_class[class_type] &#125;)            return obj        end    local vtbl=&#123;&#125;    _class[class_type]=vtbl    setmetatable(class_type,&#123;__newindex=        function(t,k,v)            vtbl[k]=v        end    &#125;)    if super then        setmetatable(vtbl,&#123;__index=            function(t,k)                local ret=_class[super][k]                vtbl[k]=ret                return ret            end        &#125;)    end    return class_typeend</code></pre><p>创建基类：</p><pre><code class="lua">base_type=class()            -- 定义一个基类 base_typefunction base_type:ctor(x)    -- 定义 base_type 的构造函数    print(&quot;base_type ctor&quot;)    self.x=xendfunction base_type:print_x()-- 定义一个成员函数 base_type:print_x    print(self.x)endfunction base_type:hello()    -- 定义另一个成员函数 base_type:hello    print(&quot;hello base_type&quot;)end</code></pre><p>创建子类：</p><pre><code class="lua">test=class(base_type)    -- 定义一个类 test 继承于 base_typefunction test:ctor()    -- 定义 test 的构造函数    print(&quot;test ctor&quot;)endfunction test:hello()    -- 重载 base_type:hello 为 test:hello    print(&quot;hello test&quot;)end</code></pre><p>测试：</p><pre><code class="lua">a=test.new(1)    -- 输出两行，base_type ctor 和 test ctor 。这个对象被正确的构造了。a:print_x()        -- 输出 1 ，这个是基类 base_type 中的成员函数。a:hello()        -- 输出 hello test ，这个函数被重载了。</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;以下描述出自《Program in Lua》中文版：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;​        一些面向对象的语言中提供了类
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://shaoxingu.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Lua" scheme="https://shaoxingu.github.io/tags/Lua/"/>
+    
+  </entry>
+  
+</feed>
