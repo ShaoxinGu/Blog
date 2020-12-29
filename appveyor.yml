@@ -9,6 +9,7 @@ install:
   - npm --version
   - npm update --save
   - npm install
+  - npm install hexo --save
   - npm install hexo-cli@3.1.0 -g
   # - npm audit fix --force
 #  - npm install hexo-renderer-less --save
