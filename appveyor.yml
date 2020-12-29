@@ -1,16 +1,17 @@
 clone_depth: 5
 
 environment:
+  nodejs_version: "10"
   access_token:
     secure: EPHC41AMatWKgl5tj7pHla7nDx9+qFPZq1zE3c/cbrFKamaWELUz0oHCbeDstF8N
 
 install:
+  - ps: Install-Product node 10
   - node --version
   - npm --version
+  - npm test
   - npm update --save
   - npm install
-  - npm install -g n
-  - n stable
   # - npm install hexo -g --save
   # - npm install hexo-cli -save
   - npm audit fix --force
