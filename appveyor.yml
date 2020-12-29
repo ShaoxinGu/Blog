@@ -9,11 +9,9 @@ install:
   - ps: Install-Product node 10
   - node --version
   - npm --version
-  - npm test
-  - npm update --save
   - npm install
-  # - npm install hexo -g --save
-  # - npm install hexo-cli -save
+  - npm install hexo -g --save
+  - npm install hexo-cli -save
   - npm audit fix --force
 #  - npm install hexo-renderer-less --save
 #  - npm install hexo-generator-feed --save
