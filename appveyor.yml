@@ -7,11 +7,11 @@ environment:
 install:
   - node --version
   - npm --version
+  - npm update --save
   - npm install
   - npm install hexo-cli -g
   - npm install –unsafe-perm –verbose -g hexo
   # - npm audit fix --force
-  # - npm update --save
 #  - npm install hexo-renderer-less --save
 #  - npm install hexo-generator-feed --save
 #  - npm install hexo-generator-json-content --save
