@@ -20,6 +20,7 @@ install:
 #  - npm install hexo-helper-live2d --save
 
 build_script:
+  - git clone https://github.com/blinkfox/hexo-theme-matery themes
   - hexo clean
   - hexo generate
 
