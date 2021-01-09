@@ -129,6 +129,58 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -229,6 +281,61 @@
 			
 			友情链接
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -473,6 +580,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -480,18 +590,18 @@
             <div id="articleContent">
                 <h1 id="知识点记录"><a href="#知识点记录" class="headerlink" title="知识点记录"></a>知识点记录</h1><p>平时总是能遇到各种各样零碎的知识点，有的太小了没有写下来，有的则是太零碎了不知道怎么写下来，久而久之很多以前知道的也忘了，以前遇到过的问题又再次成为阻碍，那感觉实在难受。所以开一个笔记专门记录一些小的知识点，等有空再把知识点细化单独整理成博客。相当于作为博客的题材库。</p>
 <h2 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h2><h3 id="1-typedef与函数指针"><a href="#1-typedef与函数指针" class="headerlink" title="1.typedef与函数指针"></a>1.typedef与函数指针</h3><h4 id="typedef常见的用法"><a href="#typedef常见的用法" class="headerlink" title="typedef常见的用法"></a>typedef常见的用法</h4><p>相当于是给类型起一个别名</p>
-<pre><code class="c++">typedef int myInt;</code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef int myInt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h4><ul>
 <li><p>返回类型(*函数名)(参数表)</p>
-<pre><code>#include &lt;iostream&gt;
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
 using namespace std;
 
-//定义一个函数指针pFUN，它指向一个返回类型为char，有一个整型的参数的函数
+&#x2F;&#x2F;定义一个函数指针pFUN，它指向一个返回类型为char，有一个整型的参数的函数
 char (*pFun)(int);
 
-//定义一个返回类型为char，参数为int的函数
-//从指针层面上理解该函数，即函数的函数名实际上是一个指针，
-//该指针指向函数在内存中的首地址
+&#x2F;&#x2F;定义一个返回类型为char，参数为int的函数
+&#x2F;&#x2F;从指针层面上理解该函数，即函数的函数名实际上是一个指针，
+&#x2F;&#x2F;该指针指向函数在内存中的首地址
 char glFun(int a)
 &#123;
     cout &lt;&lt; a &lt;&lt; endl;
@@ -500,22 +610,22 @@ char glFun(int a)
 
 int main()
 &#123;
-    //将函数glFun的地址赋值给变量pFun
-    pFun = glFun;
-    //*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。
+    &#x2F;&#x2F;将函数glFun的地址赋值给变量pFun
+    pFun &#x3D; glFun;
+    &#x2F;&#x2F;*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。
     cout&lt;&lt;(*pFun)(2)&lt;&lt;endl;
     return 0;
-&#125;</code></pre></li>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>typedef  返回类型(*类型名)(参数表)</p>
-<pre><code class="c++">#include &lt;iostream&gt;
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 using namespace std;
 
-//定义了一种新类型PTRFUN
-//这种类型表示指向某种函数的指针，这种函数以一个int为参数并返回char类型
-//后面就可以像使用int,char一样使用PTRFUN来定义变量了。
+&#x2F;&#x2F;定义了一种新类型PTRFUN
+&#x2F;&#x2F;这种类型表示指向某种函数的指针，这种函数以一个int为参数并返回char类型
+&#x2F;&#x2F;后面就可以像使用int,char一样使用PTRFUN来定义变量了。
 typedef char (*PTRFUN)(int); 
 
-//定义一个返回类型为char，参数为int的函数
+&#x2F;&#x2F;定义一个返回类型为char，参数为int的函数
 char glFun(int a)
 &#123;
     cout &lt;&lt; a &lt;&lt; endl;
@@ -524,64 +634,66 @@ char glFun(int a)
 
 int main()
 &#123;
-    //将函数glFun的地址赋值给变量pFun
-    PTRFUN pFun = glFun;
-    //*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。
+    &#x2F;&#x2F;将函数glFun的地址赋值给变量pFun
+    PTRFUN pFun &#x3D; glFun;
+    &#x2F;&#x2F;*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。
     cout&lt;&lt;(*pFun)(2)&lt;&lt;endl;
     return 0;
-&#125;</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 </li>
 </ul>
 <h3 id="2-枚举常量不能用做宏判断的条件"><a href="#2-枚举常量不能用做宏判断的条件" class="headerlink" title="2.枚举常量不能用做宏判断的条件"></a>2.枚举常量不能用做宏判断的条件</h3><p>比如下面的代码</p>
-<pre><code class="c++">#include &lt;iostream&gt;
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #define PLATFORM PS4
 enum PLATFORM_TYPE &#123;
-    SWITCH,
-    PS4,
+	SWITCH,
+	PS4,
 &#125;;
 int main()
 &#123;
-#if PLATFORM == SWITCH        //判断语句1
-    std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
-#elif PLATFORM == PS4        //判断语句2
-    std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
+#if PLATFORM &#x3D;&#x3D; SWITCH		&#x2F;&#x2F;判断语句1
+	std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
+#elif PLATFORM &#x3D;&#x3D; PS4		&#x2F;&#x2F;判断语句2
+	std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
 #endif
-    return 0;
-&#125;</code></pre>
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>按照预期，如果#define PLATFORM SWITCH输出“Nintendo!”， 如果#define PLATFORM PS4则输出“Sony!”。</p>
 <p>但是实际运行的结果总是“Nintendo!”，也就是判断语句1始终成立！</p>
 <p>百思不得其解之后，我终于意识到条件编译是预编译阶段的事情，而enum的定义要等到编译阶段才会处理。也就是说在预编译阶段压根儿没有SWITCH和PS4这两个标识符。而且在 #if 之后，所有不能通过 #define 被替换为字面量的标识符和关键字都会被替换为0，因此也不会报错。所以实际上执行的判断语句是：</p>
-<pre><code class="c++">#if 0 == 0        //判断语句1
-    std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
-#elif 0 == 0    //判断语句2
-    std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
-#endif</code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#if 0 &#x3D;&#x3D; 0		&#x2F;&#x2F;判断语句1
+	std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
+#elif 0 &#x3D;&#x3D; 0	&#x2F;&#x2F;判断语句2
+	std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>所以才会有上面的现象。修改后逻辑终于正常了，代码如下：</p>
-<pre><code class="c++">#include &lt;iostream&gt;
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 #define PLATFORM PS4
 #define SWITCH 1
 #define PS4 2
 int main()
 &#123;
-#if PLATFORM == SWITCH        //判断语句1
-    std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
-#elif PLATFORM == PS4        //判断语句2
-    std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
+#if PLATFORM &#x3D;&#x3D; SWITCH		&#x2F;&#x2F;判断语句1
+	std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
+#elif PLATFORM &#x3D;&#x3D; PS4		&#x2F;&#x2F;判断语句2
+	std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
 #endif
-    return 0;
-&#125;</code></pre>
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-C-C-的头文件"><a href="#3-C-C-的头文件" class="headerlink" title="3.C/C++的头文件"></a>3.C/C++的头文件</h3><p>保证同一个头文件不会被包含两次的方法有两个：</p>
 <p>1.#ifndef</p>
-<pre><code class="c++">#ifndef __SOMEFILE_H__
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#ifndef __SOMEFILE_H__
 #define __SOMEFILE_H__
-// 头文件声明、定义语句
-#endif</code></pre>
+&#x2F;&#x2F; 头文件声明、定义语句
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这种方式受C/C++语言标准支持。</p>
 <p>优点是它不仅可以保证同一个文件不会被包含多次，也能保证内容完全相同的多个文件（或者代码片段）也不会被同时包含。</p>
 <p>缺点是宏名冲突时会出现一系列奇怪的问题。</p>
 <p>2.#pragma once</p>
-<pre><code class="c++">#pragma once
-// 头文件声明、定义语句</code></pre>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#pragma once
+&#x2F;&#x2F; 头文件声明、定义语句<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>#pragma once 一般由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，不适用于多个相同内容的文件。</p>
 <p>优点是写法简洁，也不必再担心宏名冲突。</p>
 <p>缺点是在存在多个相同内容的头文件时，还是会出现多次包含的情况。以及部分老的编译器可能不支持。</p>
@@ -597,7 +709,7 @@ int main()
 </ol>
 <h3 id="5-void-变量"><a href="#5-void-变量" class="headerlink" title="5.(void)变量"></a>5.(void)变量</h3><p>经常在一些驱动代码里面见到这种用法，变量前直接加（void）的语句，一开始对这种用法一头雾水，不知其何意！后经多方查阅资料了解，这只是一种防止编译器编译时报警告的用法。有些变量如果未曾使用，在编译时是会报错，从而有些导致编译不过，所以才会出现这种用法。而此语句在代码中没有具体意义，只是告诉编译器该变量已经使用了。</p>
 <p>Lua的源代码中将其封装为一个叫做UNUSED的宏：</p>
-<pre><code class="c">#define UNUSED(x) ((void)(x))</code></pre>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression"><span class="token function">UNUSED</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="6运算符优先级"><a href="#6运算符优先级" class="headerlink" title="6运算符优先级"></a>6运算符优先级</h3><table>
 <thead>
 <tr>
@@ -1450,7 +1562,7 @@ int main()
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2020</span>
+                <span id="year">2019-2021</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">Philip</a>
@@ -1480,13 +1592,13 @@ int main()
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/ShaoxinGu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:853674765@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1496,7 +1608,7 @@ int main()
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=853674765" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 853674765" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1505,10 +1617,6 @@ int main()
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

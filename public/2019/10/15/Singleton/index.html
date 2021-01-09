@@ -129,6 +129,58 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -229,6 +281,61 @@
 			
 			友情链接
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -473,6 +580,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -488,63 +598,63 @@
 </ul>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p><a target="_blank" rel="noopener" href="https://gpp.tkchu.me/singleton.html">GPP（Game Programming Patterns）</a>中以一个文件系统封装类作为例子。</p>
 <p>经典的C++实现方案:</p>
-<pre><code class="C++">class FileSystem
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class FileSystem
 &#123;
 public:
-    static FileSystem&amp; instance()
-    &#123;
-        // 惰性初始化
-        if (instance_ == NULL) instance_ = new FileSystem();
-        return *instance_;
-    &#125;
+	static FileSystem&amp; instance()
+	&#123;
+		&#x2F;&#x2F; 惰性初始化
+		if (instance_ &#x3D;&#x3D; NULL) instance_ &#x3D; new FileSystem();
+		return *instance_;
+	&#125;
 
 private:
-    FileSystem() &#123;&#125;
+	FileSystem() &#123;&#125;
 
-    static FileSystem* instance_;
-&#125;;</code></pre>
+	static FileSystem* instance_;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>静态的<code>instance_</code>成员保存了一个类的实例， 私有的构造器保证了它是<strong>唯一</strong>的。 公开的静态方法<code>instance()</code>让任何地方的代码都能访问实例。 在首次被请求时，它同样负责惰性实例化该单例。 </p>
 <p>线程安全的现代C++实现方案：</p>
-<pre><code class="C++">class FileSystem
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class FileSystem
 &#123;
 public:
-    static FileSystem&amp; instance()
-    &#123;
-        static FileSystem* instance = new FileSystem();
-        return *instance;
-    &#125;
+	static FileSystem&amp; instance()
+	&#123;
+		static FileSystem* instance &#x3D; new FileSystem();
+		return *instance;
+	&#125;
 
 private:
-    FileSystem() &#123;&#125;
-&#125;;</code></pre>
+	FileSystem() &#123;&#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="为什么我们使用它"><a href="#为什么我们使用它" class="headerlink" title="为什么我们使用它"></a>为什么我们使用它</h2><ul>
 <li><p><strong>如果没人用，就不必创建实例。</strong> 这种惰性初始化为节约内存和CPU资源带来了好处。</p>
 </li>
 <li><p><strong>它在运行时实例化。</strong> 单例通常的替代方案是使用含有静态成员变量的类，但是静态成员是自动初始化的。编译器在main()运行前初始化静态变量，而且初始化的顺序不可控，这意味着它们的相互依赖不可靠。而单例模式的惰性初始化没有这个问题。</p>
 </li>
 <li><p><strong>可继承单例。</strong>  单例可继承。这意味着单例模式可以配合多态性写出优美的代码。核心代码如下：</p>
-<pre><code class="lua">class FileSystem
-&#123;
-public:
-   static FileSystem&amp; instance();
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">class <span class="token function">FileSystem</span>
+<span class="token punctuation">&#123;</span>
+public<span class="token punctuation">:</span>
+	static FileSystem<span class="token operator">&amp;</span> <span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-   virtual ~FileSystem() &#123;&#125;
-   virtual char* readFile(char* path) = 0;
-   virtual void  writeFile(char* path, char* contents) = 0;
+	virtual <span class="token operator">~</span><span class="token function">FileSystem</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+	virtual char<span class="token operator">*</span> <span class="token function">readFile</span><span class="token punctuation">(</span>char<span class="token operator">*</span> path<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	virtual void  <span class="token function">writeFile</span><span class="token punctuation">(</span>char<span class="token operator">*</span> path<span class="token punctuation">,</span> char<span class="token operator">*</span> contents<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-protected:
-   FileSystem() &#123;&#125;
-&#125;;
+protected<span class="token punctuation">:</span>
+	<span class="token function">FileSystem</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
-FileSystem&amp; FileSystem::instance()
-&#123;
-#if PLATFORM == PLAYSTATION3
-   static FileSystem * instance = new PS3FileSystem();
-#elif PLATFORM == WII
-   static FileSystem * instance = new WiiFileSystem();
-#endif
-   return *instance;
-&#125;</code></pre>
+FileSystem<span class="token operator">&amp;</span> FileSystem<span class="token punctuation">::</span><span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+<span class="token operator">#</span><span class="token keyword">if</span> PLATFORM <span class="token operator">==</span> PLAYSTATION3
+	static FileSystem <span class="token operator">*</span> instance <span class="token operator">=</span> new <span class="token function">PS3FileSystem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">#</span>elif PLATFORM <span class="token operator">==</span> WII
+	static FileSystem <span class="token operator">*</span> instance <span class="token operator">=</span> new <span class="token function">WiiFileSystem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">#</span>endif
+	<span class="token keyword">return</span> <span class="token operator">*</span>instance<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过一个简单的编译器转换，我们把文件系统包装类绑定到合适的具体类型上。 整个代码库都可以使用<code>FileSystem::instance()</code>接触到文件系统，而无需和任何平台相关的代码耦合。耦合发生在为特定平台写的<code>FileSystem</code>类实现文件中。 </p>
 </li>
 </ul>
@@ -578,69 +688,66 @@ FileSystem&amp; FileSystem::instance()
 <li><p>传进来：在用其他更加繁杂的方法前，考虑一下这个解决方案。 </p>
 </li>
 <li><p>从基类中获得：很多游戏架构有浅层但是宽泛的继承层次，通常只有一层深。举个例子，你也许有<code>GameObject</code>基类，每个游戏中的敌人或者对象都继承它。使用这样的架构，很大一部分游戏代码会存在于这些“子”推导类中。这就意味着这些类已经有了对同样事物的相同获取方法：它们的<code>GameObject</code>基类。我们可以利用这点： </p>
-<pre><code class="c++">class GameObject
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class GameObject
 &#123;
 protected:
-    Log&amp; getLog() &#123; return log_; &#125;
+	Log&amp; getLog() &#123; return log_; &#125;
 
 private:
-    static Log&amp; log_;
+	static Log&amp; log_;
 &#125;;
 
 class Enemy : public GameObject
 &#123;
-    void doSomething()
-    &#123;
-        getLog().write(&quot;I can log!&quot;);
-    &#125;
-&#125;;</code></pre>
-</li>
+	void doSomething()
+	&#123;
+		getLog().write(&quot;I can log!&quot;);
+	&#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>从已经是全局的东西中获取： 大多数代码库仍有一些全局可用对象，比如一个代表了整个游戏状态的<code>Game</code>或<code>World</code>对象。我们可以让现有的全局对象捎带需要的东西，来减少全局变量类的数目。不让<code>Log</code>，<code>FileSystem</code>和<code>AudioPlayer</code>都变成单例，而是这样做：</p>
-<pre><code class="c++">class Game
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">class Game
 &#123;
 public:
-    static Game&amp; instance() &#123; return instance_; &#125;
+	static Game&amp; instance() &#123; return instance_; &#125;
 
-    // 设置log_, et. al. ……
+	&#x2F;&#x2F; 设置log_, et. al. ……
 
-    Log&amp; getLog() &#123; return *log_; &#125;
-    FileSystem&amp; getFileSystem() &#123; return *fileSystem_; &#125;
-    AudioPlayer&amp; getAudioPlayer() &#123; return *audioPlayer_; &#125;
+	Log&amp; getLog() &#123; return *log_; &#125;
+	FileSystem&amp; getFileSystem() &#123; return *fileSystem_; &#125;
+	AudioPlayer&amp; getAudioPlayer() &#123; return *audioPlayer_; &#125;
 
 private:
-    static Game instance_;
+	static Game instance_;
 
-    Log* log_;
-    FileSystem* fileSystem_;
-    AudioPlayer* audioPlayer_;
-&#125;;</code></pre>
-</li>
+	Log* log_;
+	FileSystem* fileSystem_;
+	AudioPlayer* audioPlayer_;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>从服务定位器中获得： 定义一个类，存在的唯一目标就是为对象提供全局访问。 这种常见的模式被称为服务器定位模式，<a target="_blank" rel="noopener" href="https://gpp.tkchu.me/service-locator.html">有单独讲它的章节</a>。</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="Lua中的实现"><a href="#Lua中的实现" class="headerlink" title="Lua中的实现"></a>Lua中的实现</h2><pre><code class="lua">Singleton = &#123;&#125;
-function Singleton:new(o)
-    o = o or &#123;&#125;
-    setmetatable(o,self)
-    self.__index = self
-    return o
-end
+<h2 id="Lua中的实现"><a href="#Lua中的实现" class="headerlink" title="Lua中的实现"></a>Lua中的实现</h2><pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">Singleton <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> Singleton<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span>
+    o <span class="token operator">=</span> o <span class="token keyword">or</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token function">setmetatable</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span>self<span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>__index <span class="token operator">=</span> self
+    <span class="token keyword">return</span> o
+<span class="token keyword">end</span>
 
-function Singleton:Instance()
-    if not self.instance then
-        self.instance = self:new()
-    end
-    return self.instance
-end
+<span class="token keyword">function</span> Singleton<span class="token punctuation">:</span><span class="token function">Instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> self<span class="token punctuation">.</span>instance <span class="token keyword">then</span>
+        self<span class="token punctuation">.</span>instance <span class="token operator">=</span> self<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>instance
+<span class="token keyword">end</span>
 
-s1 = Singleton:Instance()
-s2 = Singleton:Instance()
-if s1 == s2 then
-    print(&quot;两个对象是相同的实例&quot;)
-end</code></pre>
-
+s1 <span class="token operator">=</span> Singleton<span class="token punctuation">:</span><span class="token function">Instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+s2 <span class="token operator">=</span> Singleton<span class="token punctuation">:</span><span class="token function">Instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> s1 <span class="token operator">==</span> s2 <span class="token keyword">then</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"两个对象是相同的实例"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -1157,7 +1264,7 @@ end</code></pre>
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2020</span>
+                <span id="year">2019-2021</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">Philip</a>
@@ -1187,13 +1294,13 @@ end</code></pre>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/ShaoxinGu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:853674765@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1203,7 +1310,7 @@ end</code></pre>
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=853674765" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 853674765" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1212,10 +1319,6 @@ end</code></pre>
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>

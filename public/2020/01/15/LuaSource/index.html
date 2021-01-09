@@ -129,6 +129,58 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -229,6 +281,61 @@
 			
 			友情链接
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -473,6 +580,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -480,73 +590,74 @@
             <div id="articleContent">
                 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>用Lua开发游戏已经有一段时间了，但是对Lua的理解还一直停留在浅层。最近想深入研究下，于是着手开始看Lua源码，并在本文记录知识点。</p>
 <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><h3 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h3><h4 id="1-基本数据结构"><a href="#1-基本数据结构" class="headerlink" title="1.基本数据结构"></a>1.基本数据结构</h4><p>Lua的基本数据结构是一个类型union+type。相关的核心代码如下：</p>
-<pre><code class="c++">/*
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;*
 ** Common type for all collectable objects
-*/
+*&#x2F;
 typedef struct GCObject GCObject;
 
-/*
+&#x2F;*
 ** Common Header for all collectable objects (in macro form, to be
 ** included in other objects)
-*/
+*&#x2F;
 #define CommonHeader \
-    GCObject *next;  \
-    lu_byte tt;      \
-    lu_byte marked
+	GCObject *next;  \
+	lu_byte tt;      \
+	lu_byte marked
 
-/*
+&#x2F;*
 ** Common type has only the common header
-*/
+*&#x2F;
 struct GCObject
 &#123;
-    CommonHeader;
+	CommonHeader;
 &#125;;
 
-/*
+&#x2F;*
 ** Tagged Values. This is the basic representation of values in Lua,
 ** an actual value plus a tag with its type.
-*/
+*&#x2F;
 
-/*
+&#x2F;*
 ** Union of all Lua values
-*/
+*&#x2F;
 typedef union Value &#123;
-    GCObject *gc;    /* collectable objects */
-    void *p;         /* light userdata */
-    int b;             /* booleans */
-    lua_CFunction f; /* light C functions */
-    lua_Integer i;   /* integer numbers */
-    lua_Number n;    /* float numbers */
+	GCObject *gc;	&#x2F;* collectable objects *&#x2F;
+	void *p;		 &#x2F;* light userdata *&#x2F;
+	int b;			 &#x2F;* booleans *&#x2F;
+	lua_CFunction f; &#x2F;* light C functions *&#x2F;
+	lua_Integer i;   &#x2F;* integer numbers *&#x2F;
+	lua_Number n;	&#x2F;* float numbers *&#x2F;
 &#125; Value;
 
 #define TValuefields \
-    Value value_;    \
-    int tt_
+	Value value_;    \
+	int tt_
 
 typedef struct lua_TValue
 &#123;
-    TValuefields;
-&#125; TValue;</code></pre>
+	TValuefields;
+&#125; TValue;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-GC算法和流程"><a href="#2-GC算法和流程" class="headerlink" title="2.GC算法和流程"></a>2.GC算法和流程</h4><ol>
 <li><p>双色标记清除算法</p>
 <p>在Lua5.0中的GC，是一次性不可被打断的操作，执行的算法是Mark-and-sweep算法，在执行GC操作的时候，会设置2种颜色，黑色和白色，然后执行GC的流程，大体的伪代码流程如下:</p>
-<pre><code>每个新创建的对象为白色
+<pre class="line-numbers language-none"><code class="language-none">每个新创建的对象为白色
 
-//初始化阶段
+&#x2F;&#x2F;初始化阶段
 遍历root链表中的对象，并将其加入到对象链表中    
 
-//标记阶段   
+&#x2F;&#x2F;标记阶段   
 当前对象链表中还有未被扫描的元素:    
     从中取出对象并将其标记为黑色   
     遍历这个对象关联的其他所有对象: 
         标记为黑色
-
-//回收阶段
+        
+&#x2F;&#x2F;回收阶段
 遍历所有对象:   
     如果为白色:   
         这些对象没有被引用，则执行回收
     否则: 
-        这些对象仍然被引用，需要保留</code></pre><p>整个过程是不能被打断的，这是为了避免一种情况：<br>如果可以被打断，在GC的过程中新创建一个对象<br>那么如果标记为白色，此时处于回收阶段，那么这个对象没有被扫描就会被回收；<br>如果标记为黑色，此时处于回收阶段，那么这个对象没有被扫描就会被保留<br>两种情况都不适合，所以只有让整个过程不可被打断，带来的问题就是造成gc的时候卡顿</p>
+        这些对象仍然被引用，需要保留<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>整个过程是不能被打断的，这是为了避免一种情况：<br>如果可以被打断，在GC的过程中新创建一个对象<br>那么如果标记为白色，此时处于回收阶段，那么这个对象没有被扫描就会被回收；<br>如果标记为黑色，此时处于回收阶段，那么这个对象没有被扫描就会被保留<br>两种情况都不适合，所以只有让整个过程不可被打断，带来的问题就是造成gc的时候卡顿</p>
 </li>
 <li><p>三色标记清除算法</p>
 <p>虽然是三色，本质是四色，颜色分为三种:</p>
@@ -554,24 +665,25 @@ typedef struct lua_TValue
 <p><strong>灰色:</strong> 当前对象为待扫描状态，当前对象已经被扫描过，但是其引用的其他对象没有被扫描</p>
 <p><strong>黑色:</strong> 当前对象已经扫描过，并且其引用的其他对象也被扫描过</p>
 <p>其流程伪代码:</p>
-<pre><code>每个新创建的对象为白色
+<pre class="line-numbers language-none"><code class="language-none">每个新创建的对象为白色
 
-//初始化阶段   
+&#x2F;&#x2F;初始化阶段   
 遍历root阶段中引用的对象，从白色设置为灰色，并放入到灰色节点列表中   
 
-//标记阶段    
+&#x2F;&#x2F;标记阶段    
 当灰色链表中还有未被扫描的元素:    
     从中去除一个对象并将其标记为黑色   
     遍历这个对象关联的其他所有对象:   
         如果是白色:
             标记为灰色，并加入灰色链表中   
-
-//回收阶段  
+            
+&#x2F;&#x2F;回收阶段  
 遍历所有对象:   
     如果为白色: 
         这些对象没有被引用，需要被回收
     否则:
-        重新加入对象链表中等待下次gc   </code></pre><p>整个标记过程是可以被打断的，被打断后回来只需要接着执行标记过程即可，回收阶段是不可被打断的。</p>
+        重新加入对象链表中等待下次gc   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>整个标记过程是可以被打断的，被打断后回来只需要接着执行标记过程即可，回收阶段是不可被打断的。</p>
 <p>如何解决在标记阶段之后创建的对象为白色的问题?<br>分裂白色为两种白色，一种为当前白色 currentwhite， 一种为非当前白色 otherwhite，新创建的对象都为otherwhite，则在执行回收的时候，如果为otherwhite则不执行回收操作，等待下次gc的时候，会执行白色的轮换，则新创建的对象会进入下一轮GC。</p>
 </li>
 </ol>
@@ -1092,7 +1204,7 @@ typedef struct lua_TValue
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2020</span>
+                <span id="year">2019-2021</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">Philip</a>
@@ -1122,13 +1234,13 @@ typedef struct lua_TValue
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/ShaoxinGu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:853674765@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1138,7 +1250,7 @@ typedef struct lua_TValue
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=853674765" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 853674765" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1147,10 +1259,6 @@ typedef struct lua_TValue
 
 
 
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
 
 </div>
     </div>
