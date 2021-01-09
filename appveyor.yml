@@ -13,6 +13,7 @@ install:
   - npm install hexo -g --save
   - npm install hexo-cli -save
   - npm audit fix --force
+  - git clone https://github.com/blinkfox/hexo-theme-matery themes/hexo-theme-matery
 #  - npm install hexo-renderer-less --save
 #  - npm install hexo-generator-feed --save
 #  - npm install hexo-generator-json-content --save
