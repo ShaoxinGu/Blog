@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="UnityShader笔记【一】, Game,unity3D">
+    <meta name="keywords" content="知识点记录, Game,unity3D">
     <meta name="description" content="一个菜鸡程序猿的学习记录">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>UnityShader笔记【一】 | Philip&#39;s Blog</title>
+    <title>知识点记录 | Philip&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -129,58 +129,6 @@
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="" class="waves-effect waves-light">
-
-      
-      <i class="fas fa-list" style="zoom: 0.6;"></i>
-      
-      <span>Medias</span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      
-      <li>
-        <a href="/musics">
-          
-          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Musics</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/movies">
-          
-          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Movies</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/books">
-          
-          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Books</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/galleries">
-          
-          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>Galleries</span>
-        </a>
-      </li>
-      
-    </ul>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -284,61 +232,6 @@
           
         </li>
         
-        <li class="m-nav-item">
-	  
-		<a href="javascript:;">
-			
-				<i class="fa-fw fas fa-list"></i>
-			
-			Medias
-			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
-		</a>
-            <ul  style="background:  ;" >
-              
-                <li>
-
-                  <a href="/musics " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Musics</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/movies " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Movies</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/books " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Books</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/galleries " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
-			      
-		          <span>Galleries</span>
-                  </a>
-                </li>
-              
-            </ul>
-          
-        </li>
-        
         
         <li><div class="divider"></div></li>
         <li>
@@ -418,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">UnityShader笔记【一】</h1>
+                    <h1 class="description center-align post-title">知识点记录</h1>
                 </div>
             </div>
         </div>
@@ -539,12 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Unity/">
-                                <span class="chip bg-color">Unity</span>
-                            </a>
-                        
-                            <a href="/tags/Shader/">
-                                <span class="chip bg-color">Shader</span>
+                            <a href="/tags/%E5%85%B6%E4%BB%96/">
+                                <span class="chip bg-color">其他</span>
                             </a>
                         
                     </div>
@@ -568,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-14
+                    2020-03-06
                 </div>
                 
 
@@ -592,83 +481,463 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="应用阶段"><a href="#应用阶段" class="headerlink" title="应用阶段"></a>应用阶段</h1><h2 id="把数据加载到显存中"><a href="#把数据加载到显存中" class="headerlink" title="把数据加载到显存中"></a>把数据加载到显存中</h2><ul>
-<li><p>所有渲染所需的数据都需要从硬盘（Hard Disk Drive，HDD）中加载到系统内存（Random Access Memory，RAM）中。然后，网格和纹理等数据又被加载到显卡上的存储空间——显存（Video Random Access Memory， VRAM）中。这是因为，显卡对于显存的访问更快，而且大多数显卡对于RAM没有直接的访问权利。</p>
+                <h1 id="知识点记录"><a href="#知识点记录" class="headerlink" title="知识点记录"></a>知识点记录</h1><p>平时总是能遇到各种各样零碎的知识点，有的太小了没有写下来，有的则是太零碎了不知道怎么写下来，久而久之很多以前知道的也忘了，以前遇到过的问题又再次成为阻碍，那感觉实在难受。所以开一个笔记专门记录一些小的知识点，等有空再把知识点细化单独整理成博客。相当于作为博客的题材库。</p>
+<h2 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h2><h3 id="1-typedef与函数指针"><a href="#1-typedef与函数指针" class="headerlink" title="1.typedef与函数指针"></a>1.typedef与函数指针</h3><h4 id="typedef常见的用法"><a href="#typedef常见的用法" class="headerlink" title="typedef常见的用法"></a>typedef常见的用法</h4><p>相当于是给类型起一个别名</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef int myInt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h4><ul>
+<li><p>返回类型(*函数名)(参数表)</p>
+<pre class="line-numbers language-none"><code class="language-none">#include &lt;iostream&gt;
+using namespace std;
+
+&#x2F;&#x2F;定义一个函数指针pFUN，它指向一个返回类型为char，有一个整型的参数的函数
+char (*pFun)(int);
+
+&#x2F;&#x2F;定义一个返回类型为char，参数为int的函数
+&#x2F;&#x2F;从指针层面上理解该函数，即函数的函数名实际上是一个指针，
+&#x2F;&#x2F;该指针指向函数在内存中的首地址
+char glFun(int a)
+&#123;
+    cout &lt;&lt; a &lt;&lt; endl;
+    return &#39;r&#39;;
+&#125;
+
+int main()
+&#123;
+    &#x2F;&#x2F;将函数glFun的地址赋值给变量pFun
+    pFun &#x3D; glFun;
+    &#x2F;&#x2F;*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。
+    cout&lt;&lt;(*pFun)(2)&lt;&lt;endl;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>typedef  返回类型(*类型名)(参数表)</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+&#x2F;&#x2F;定义了一种新类型PTRFUN
+&#x2F;&#x2F;这种类型表示指向某种函数的指针，这种函数以一个int为参数并返回char类型
+&#x2F;&#x2F;后面就可以像使用int,char一样使用PTRFUN来定义变量了。
+typedef char (*PTRFUN)(int); 
+
+&#x2F;&#x2F;定义一个返回类型为char，参数为int的函数
+char glFun(int a)
+&#123;
+    cout &lt;&lt; a &lt;&lt; endl;
+    return &#39;r&#39;;
+&#125;
+
+int main()
+&#123;
+    &#x2F;&#x2F;将函数glFun的地址赋值给变量pFun
+    PTRFUN pFun &#x3D; glFun;
+    &#x2F;&#x2F;*pFun显然是取pFun所指向地址的内容，当然也就是取出了函数glFun()的内容，然后给定参数为2。
+    cout&lt;&lt;(*pFun)(2)&lt;&lt;endl;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 </li>
-<li><p>渲染所需的数据除了纹理和网格之外，还包括顶点的位置信息、法线方向、顶点颜色、纹理坐标等。</p>
+</ul>
+<h3 id="2-枚举常量不能用做宏判断的条件"><a href="#2-枚举常量不能用做宏判断的条件" class="headerlink" title="2.枚举常量不能用做宏判断的条件"></a>2.枚举常量不能用做宏判断的条件</h3><p>比如下面的代码</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#define PLATFORM PS4
+enum PLATFORM_TYPE &#123;
+	SWITCH,
+	PS4,
+&#125;;
+int main()
+&#123;
+#if PLATFORM &#x3D;&#x3D; SWITCH		&#x2F;&#x2F;判断语句1
+	std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
+#elif PLATFORM &#x3D;&#x3D; PS4		&#x2F;&#x2F;判断语句2
+	std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
+#endif
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>按照预期，如果#define PLATFORM SWITCH输出“Nintendo!”， 如果#define PLATFORM PS4则输出“Sony!”。</p>
+<p>但是实际运行的结果总是“Nintendo!”，也就是判断语句1始终成立！</p>
+<p>百思不得其解之后，我终于意识到条件编译是预编译阶段的事情，而enum的定义要等到编译阶段才会处理。也就是说在预编译阶段压根儿没有SWITCH和PS4这两个标识符。而且在 #if 之后，所有不能通过 #define 被替换为字面量的标识符和关键字都会被替换为0，因此也不会报错。所以实际上执行的判断语句是：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#if 0 &#x3D;&#x3D; 0		&#x2F;&#x2F;判断语句1
+	std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
+#elif 0 &#x3D;&#x3D; 0	&#x2F;&#x2F;判断语句2
+	std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>所以才会有上面的现象。修改后逻辑终于正常了，代码如下：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#define PLATFORM PS4
+#define SWITCH 1
+#define PS4 2
+int main()
+&#123;
+#if PLATFORM &#x3D;&#x3D; SWITCH		&#x2F;&#x2F;判断语句1
+	std::cout &lt;&lt; &quot;Nintendo!&quot; &lt;&lt; std::endl;
+#elif PLATFORM &#x3D;&#x3D; PS4		&#x2F;&#x2F;判断语句2
+	std::cout &lt;&lt; &quot;Sony!&quot; &lt;&lt; std::endl;
+#endif
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-C-C-的头文件"><a href="#3-C-C-的头文件" class="headerlink" title="3.C/C++的头文件"></a>3.C/C++的头文件</h3><p>保证同一个头文件不会被包含两次的方法有两个：</p>
+<p>1.#ifndef</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#ifndef __SOMEFILE_H__
+#define __SOMEFILE_H__
+&#x2F;&#x2F; 头文件声明、定义语句
+#endif<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这种方式受C/C++语言标准支持。</p>
+<p>优点是它不仅可以保证同一个文件不会被包含多次，也能保证内容完全相同的多个文件（或者代码片段）也不会被同时包含。</p>
+<p>缺点是宏名冲突时会出现一系列奇怪的问题。</p>
+<p>2.#pragma once</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#pragma once
+&#x2F;&#x2F; 头文件声明、定义语句<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>#pragma once 一般由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，不适用于多个相同内容的文件。</p>
+<p>优点是写法简洁，也不必再担心宏名冲突。</p>
+<p>缺点是在存在多个相同内容的头文件时，还是会出现多次包含的情况。以及部分老的编译器可能不支持。</p>
+<h3 id="4-垃圾回收算法"><a href="#4-垃圾回收算法" class="headerlink" title="4.垃圾回收算法"></a>4.垃圾回收算法</h3><ol>
+<li><p>引用计数法</p>
 </li>
-<li><p>当把数据加载到显存中后，RAM中的数据就可以移除了。但对于一些数据来说，CPU仍然需要访问它们（例如，我们希望CPU可以访问网格数据来进行碰撞检测），那么我们可能就不希望这些数据被移除，因为从硬盘加载到RAM的过程是十分耗时的。</p>
+<li><p>Mark-Sweep法（标记清除法）：一个优点就是可以避免循环引用，当A和B两个对象可能互相指向对方时，标记可以避免无限递归。缺点是会带来内存碎片。</p>
 </li>
-</ul>
-<h2 id="设置渲染状态"><a href="#设置渲染状态" class="headerlink" title="设置渲染状态"></a>设置渲染状态</h2><ul>
-<li>什么是渲染状态呢？一个通俗的解释就是，这些状态定义了场景中的网格是怎样被渲染的。例如，使用哪个顶点着色器（Vertex Shader）/片元着色器（Fragment Shader）、光源属性、材质等。如果我们没有更改渲染状态，那么所有的网格都将使用同一种渲染状态。</li>
-</ul>
-<h2 id="调用DrawCall"><a href="#调用DrawCall" class="headerlink" title="调用DrawCall"></a>调用DrawCall</h2><ul>
-<li><p>DrawCall就是一个命令，它的发起方是CPU，接收方是GPU。这个命令仅仅会指向一个需要被渲染的图元（premitives）列表，而不会再包含任何材质信息。</p>
+<li><p>三色标记法</p>
 </li>
-<li><p>当给定了一个DrawCall时，GPU就会根据渲染状态（例如材质、纹理、着色器等）和所有输入的顶点数据来进行计算，最终输出成屏幕上显示的那些漂亮的像素。</p>
+<li><p>分代收集</p>
 </li>
-<li><p>DrawCall的调用次数会直接影响性能，应该尽量减少DrawCall调用次数。</p>
-</li>
-<li><p>另外，CPU和GPU是并行工作的，通过一个命令缓冲区（可以理解为队列）来实现，CPU向命令缓冲区中添加命令，GPU向命令缓冲区读取命令。</p>
-</li>
+</ol>
+<h3 id="5-void-变量"><a href="#5-void-变量" class="headerlink" title="5.(void)变量"></a>5.(void)变量</h3><p>经常在一些驱动代码里面见到这种用法，变量前直接加（void）的语句，一开始对这种用法一头雾水，不知其何意！后经多方查阅资料了解，这只是一种防止编译器编译时报警告的用法。有些变量如果未曾使用，在编译时是会报错，从而有些导致编译不过，所以才会出现这种用法。而此语句在代码中没有具体意义，只是告诉编译器该变量已经使用了。</p>
+<p>Lua的源代码中将其封装为一个叫做UNUSED的宏：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token expression"><span class="token function">UNUSED</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="6运算符优先级"><a href="#6运算符优先级" class="headerlink" title="6运算符优先级"></a>6运算符优先级</h3><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>名称或含义</th>
+<th>使用形式</th>
+<th>结合方向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>[]</td>
+<td>数组下标</td>
+<td>数组名[常量表达式]</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td></td>
+<td>()</td>
+<td>圆括号</td>
+<td>（表达式）/函数名(形参表)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>.</td>
+<td>成员选择（对象）</td>
+<td>对象.成员名</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-&gt;</td>
+<td>成员选择（指针）</td>
+<td>对象指针-&gt;成员名</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>-</td>
+<td>负号运算符</td>
+<td>-表达式</td>
+<td><strong>右到左</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>(类型)</td>
+<td>强制类型转换</td>
+<td>(数据类型)表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>++</strong></td>
+<td>自增运算符</td>
+<td><strong>++变量名/变量名++</strong></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>–</strong></td>
+<td>自减运算符</td>
+<td><strong>–变量名/变量名–</strong></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>*****</td>
+<td>取值运算符</td>
+<td><strong>*指针变量</strong></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>&amp;</strong></td>
+<td>取地址运算符</td>
+<td><strong>&amp;变量名</strong></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>!</td>
+<td>逻辑非运算符</td>
+<td>!表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>~</td>
+<td>按位取反运算符</td>
+<td>~表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>sizeof</td>
+<td>长度运算符</td>
+<td>sizeof(表达式)</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>/</td>
+<td>除</td>
+<td>表达式/表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td></td>
+<td>*</td>
+<td>乘</td>
+<td>表达式*表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>%</td>
+<td>余数（取模）</td>
+<td>整型表达式/整型表达式</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>+</td>
+<td>加</td>
+<td>表达式+表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td></td>
+<td>-</td>
+<td>减</td>
+<td>表达式-表达式</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>&lt;&lt;</td>
+<td>左移</td>
+<td>变量&lt;&lt;表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td></td>
+<td>&gt;&gt;</td>
+<td>右移</td>
+<td>变量&gt;&gt;表达式</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>&gt;</td>
+<td>大于</td>
+<td>表达式&gt;表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td></td>
+<td>&gt;=</td>
+<td>大于等于</td>
+<td>表达式&gt;=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;</td>
+<td>小于</td>
+<td>表达式&lt;表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;=</td>
+<td>小于等于</td>
+<td>表达式&lt;=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>==</td>
+<td>等于</td>
+<td>表达式==表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td></td>
+<td>!=</td>
+<td>不等于</td>
+<td>表达式!= 表达式</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>&amp;</td>
+<td>按位与</td>
+<td>表达式&amp;表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>^</strong></td>
+<td>按位异或</td>
+<td>表达式^表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>10</td>
+<td>|</td>
+<td>按位或</td>
+<td>表达式|表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+<td>表达式&amp;&amp;表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>12</td>
+<td>||</td>
+<td>逻辑或</td>
+<td>表达式||表达式</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>13</td>
+<td>?:</td>
+<td>条件运算符</td>
+<td>表达式1? 表达式2: 表达式3</td>
+<td><strong>右到左</strong></td>
+</tr>
+<tr>
+<td>14</td>
+<td>=</td>
+<td>赋值运算符</td>
+<td>变量=表达式</td>
+<td><strong>右到左</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>/=</td>
+<td>除后赋值</td>
+<td>变量/=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>*=</td>
+<td>乘后赋值</td>
+<td>变量*=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>%=</td>
+<td>取模后赋值</td>
+<td>变量%=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>+=</td>
+<td>加后赋值</td>
+<td>变量+=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>-=</td>
+<td>减后赋值</td>
+<td>变量-=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&lt;&lt;=</td>
+<td>左移后赋值</td>
+<td>变量&lt;&lt;=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&gt;&gt;=</td>
+<td>右移后赋值</td>
+<td>变量&gt;&gt;=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>&amp;=</td>
+<td>按位与后赋值</td>
+<td>变量&amp;=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>^=</td>
+<td>按位异或后赋值</td>
+<td>变量^=表达式</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>|=</td>
+<td>按位或后赋值</td>
+<td>变量|==表达式</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>,</td>
+<td>逗号运算符</td>
+<td>表达式,表达式,…</td>
+<td>左到右</td>
+</tr>
+</tbody></table>
+<h3 id="7-定义和声明"><a href="#7-定义和声明" class="headerlink" title="7.定义和声明"></a>7.定义和声明</h3><p>关于定义和声明的定义，C＋＋primer的解释是这样的：</p>
+<p>变量的定义（definition）:用于为变量分配存储空间，还可以为变量指定初始值。在一个程序中，变量有且仅有一个定义；<br>变量的声明（declaration）：用于向程序表明变量的类型和名字。</p>
+<p><strong>定义也是声明：当定义变量时我们声明了它的类型和名字。</strong></p>
+<p>可以通过使用extern关键字声明变量名而不定义它。</p>
+<p>任何变量或函数等，都是要求先声明再使用。某些情况下，要使用的变量或函数还没有定义，则需要<strong>前向声明</strong>。</p>
+<h4 id="关于前向声明（forward-declaration）："><a href="#关于前向声明（forward-declaration）：" class="headerlink" title="关于前向声明（forward declaration）："></a>关于前向声明（forward declaration）：</h4><ul>
+<li>前向声明能显著缩短编译链接时间。</li>
+<li>当两个定义互相使用对方时，需要使用前向声明打破循环。</li>
+<li>在定义一个类型时如果用到了自身的指针时，需要使用前向声明。</li>
 </ul>
-<h1 id="几何阶段"><a href="#几何阶段" class="headerlink" title="几何阶段"></a>几何阶段</h1><blockquote>
-<p>在这个阶段，顶点将经历以下几个阶段：</p>
-<p><strong>模型坐标系</strong> -&gt; 模型变换 -&gt; <strong>世界坐标系</strong>  -&gt; 视图变换 -&gt; <strong>观察坐标系</strong> -&gt; 投影变换 -&gt; <strong>规范化的观察空间</strong> -&gt; 屏幕映射 -&gt; <strong>屏幕坐标系</strong></p>
-</blockquote>
-<h2 id="顶点着色器（Vertex-Shader）"><a href="#顶点着色器（Vertex-Shader）" class="headerlink" title="顶点着色器（Vertex Shader）"></a>顶点着色器（Vertex Shader）</h2><ul>
-<li>顶点着色器是完全可编程的，它通常用于实现顶点的空间变换、顶点着色等功能。</li>
-<li>顶点着色器是流水线的第一个阶段，它的输入来自于CPU。顶点着色器的处理单位是顶点，也就是说，输入进来的每个顶点都会调用一次顶点着色器。顶点着色器本身不可以创建或者销毁任何顶点，而且无法得到顶点与顶点之间的关系。例如，我们无法得知两个顶点是否属于同一个三角网格。但正是因为这样的相互独立性，GPU可以利用本身的特征并行化处理每一个顶点，这意味着这一阶段的处理速度会很快。</li>
-<li>顶点着色器需要完成的工作主要有：坐标变换和逐顶点光照。</li>
-<li>坐标变换，顾名思义，就是对顶点的坐标（即位置）进行某种变换。顶点着色器可以在这一步中改变顶点的位置，这在顶点动画中是非常有用的。例如，我们可以通过改变顶点位置来模拟水面、布料等。但需要注意的是，无论我们在顶点着色器中怎样改变顶点的位置，一个最基本的顶点着色器必须完成的一个工作是，把顶点坐标从模型空间转换到齐次裁剪空间。</li>
-<li><code>旧版Unity</code>使用<code>o.vertex = mul(UNITY_MVP, v.vertex);</code>来完成顶点变换，而<code>新版Unity</code>使用<code>o.vertex = UnityObjectToClipPos(v.vertex);</code>来实现顶点变换。其功能就是把顶点坐标转换到齐次裁剪坐标系下，接着通常再由硬件做透视除法后，最终得到归一化的设备坐标（Nomalized Device Coordinates, NDC)。</li>
-<li>顶点着色器可以有不同的输出方式。最常见的输出路径是经光栅化后交给片元着色器进行处理。而在现代的Shader Model中，它还可以把数据发送给曲面细分着色器或几何着色器。</li>
-</ul>
-<h2 id="几何-曲面细分着色器"><a href="#几何-曲面细分着色器" class="headerlink" title="几何/曲面细分着色器"></a>几何/曲面细分着色器</h2><ul>
-<li>几何着色器和曲面细分着色器通常被合在一起成为几何/曲面细分着色器。</li>
-<li>几何/曲面细分着色器是一个可选的操作。</li>
-</ul>
-<h3 id="几何着色器（Geometry-Shader）"><a href="#几何着色器（Geometry-Shader）" class="headerlink" title="几何着色器（Geometry Shader）"></a>几何着色器（Geometry Shader）</h3><ul>
-<li>几何着色器的输入是顶点数据。它可以对图元的顶点进行操作，它可以高效地创建和删除几何图元。</li>
-</ul>
-<h3 id="曲面细分着色器（Tessellation-Shader）"><a href="#曲面细分着色器（Tessellation-Shader）" class="headerlink" title="曲面细分着色器（Tessellation Shader）"></a>曲面细分着色器（Tessellation Shader）</h3><ul>
-<li>曲面细分着色器可以通过增加顶点，让现有的多边形网格更加逼近曲面。</li>
-</ul>
-<h2 id="裁剪（Clipping）"><a href="#裁剪（Clipping）" class="headerlink" title="裁剪（Clipping）"></a>裁剪（Clipping）</h2><ul>
-<li><p>由于我们的场景可能会很大，而摄像机的视野范围很有可能不会覆盖所有的场景物体，一个很自然的想法就是，那些不在摄像机视野范围内的物体不需要被处理。而裁剪就是为了完成这个目的而被提出来。</p>
-</li>
-<li><p>一个图元与摄像机视野的关系有3种：完全在视野内、部分在视野内、完全在视野外。完全在视野内的图元就继续传递给下一个流水线阶段，完全在视野外的图元不会继续向下传递，以为它们不需要被渲染。而那些部分在视野内的图元需要进行一个处理，这就是裁剪。例如，一条线段的一个顶点在视野内，而另一个顶点不在视野内，那么在视野外部的顶点应该使用一个新的顶点来代替，这个新的顶点位于这条线段和视野边界的交点处。</p>
-</li>
-<li><p>和顶点着色器不同，这一步是不可编程的，即我们无法通过编程来控制裁剪的过程，而是硬件上的固定操作，但我们可以自定义一个裁剪操作来对这一步进行配置。</p>
-</li>
-</ul>
-<h2 id="屏幕映射（Screen-Mapping）"><a href="#屏幕映射（Screen-Mapping）" class="headerlink" title="屏幕映射（Screen Mapping）"></a>屏幕映射（Screen Mapping）</h2><ul>
-<li><p>屏幕映射的任务是把每个图元的x和y坐标转换到屏幕坐标系（Screen Coordinates）下。屏幕坐标系是一个二维坐标系，它和我们用于显示画面的分辨率有很大关系。</p>
-</li>
-<li><p>屏幕坐标系和z坐标一起构成了一个坐标系，叫做窗口坐标系（Window Coordinates）。这些值会一起被传递到光栅化阶段。</p>
-</li>
-</ul>
-<h1 id="光栅化阶段"><a href="#光栅化阶段" class="headerlink" title="光栅化阶段"></a>光栅化阶段</h1><h2 id="三角形设置（Triangle-Setup）"><a href="#三角形设置（Triangle-Setup）" class="headerlink" title="三角形设置（Triangle Setup）"></a>三角形设置（Triangle Setup）</h2><ul>
-<li>将几何阶段传过来的顶点数据进行处理，将顶点连成三角网格。</li>
-</ul>
-<h2 id="三角形遍历（Triangle-Traversal）"><a href="#三角形遍历（Triangle-Traversal）" class="headerlink" title="三角形遍历（Triangle Traversal）"></a>三角形遍历（Triangle Traversal）</h2><ul>
-<li>三角形遍历的输入就是三角形设置的结果。</li>
-<li>根据顶点信息，计算得到覆盖三角网格的像素位置，对于的这些像素就生成一个片元（fragment）。</li>
-<li>而片元中每个像素的状态都是对三个顶点的信息进行插值得到的。</li>
-</ul>
-<h2 id="片元着色器（Fragment-Shader）"><a href="#片元着色器（Fragment-Shader）" class="headerlink" title="片元着色器（Fragment Shader）"></a>片元着色器（Fragment Shader）</h2><ul>
-<li>这是一个可编程的阶段</li>
-<li>根据之前的片元信息，计算每个片元的颜色值。</li>
-<li>这个阶段可以完成很多重要的渲染技术，比如纹理贴图。</li>
-</ul>
-<h2 id="逐片元操作（Per-Fragment-Operations）"><a href="#逐片元操作（Per-Fragment-Operations）" class="headerlink" title="逐片元操作（Per-Fragment Operations）"></a>逐片元操作（Per-Fragment Operations）</h2><ul>
-<li>在DirectX中又叫做输出合并阶段（Output-Merger）。</li>
-<li>这里将每个片元的深度和颜色与帧缓存结合在一起。每个像素的颜色都是混合的结果。</li>
-</ul>
-<h2 id="生成屏幕图像"><a href="#生成屏幕图像" class="headerlink" title="生成屏幕图像"></a>生成屏幕图像</h2><ul>
-<li>显示图像！</li>
-</ul>
+<h3 id="8-字节对齐"><a href="#8-字节对齐" class="headerlink" title="8.字节对齐"></a>8.字节对齐</h3><p>字节对齐基于三条原则：</p>
+<ol>
+<li>数据成员对齐规则：结构体（struct）的数据成员，第一个数据成员放在offset为0的地方，之后的每个数据成员存储的起始位置要从该成员大小的整数倍开始（比如int在32位机子上为4字节，所以要从4的整数倍地址开始存储）。</li>
+<li>结构体作为成员：如果一个结构体里同时包含结构体成员，则结构体成员要从其内部最大元素大小的整数倍地址开始存储（如struct a里有struct b,b里有char,int ,double等元素，那么b应该从8(即double类型的大小)的整数倍开始存储）。</li>
+<li>结构体的总大小：即sizeof的结果。在按之前的对齐原则计算出来的大小的基础上，必须还得是其内部最大成员的整数倍，不足的要补齐（如struct里最大为double，现在计算得到的已经是11，则总大小为16）。</li>
+</ol>
 
                 
             </div>
@@ -695,7 +964,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shaoxingu.github.io/2019/10/14/ShaderNote1/">https://shaoxingu.github.io/2019/10/14/ShaderNote1/</a>
+                    <a href="https://shaoxingu.github.io/2020/03/06/Trivial/">https://shaoxingu.github.io/2020/03/06/Trivial/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -733,12 +1002,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Unity/">
-                                    <span class="chip bg-color">Unity</span>
-                                </a>
-                            
-                                <a href="/tags/Shader/">
-                                    <span class="chip bg-color">Shader</span>
+                                <a href="/tags/%E5%85%B6%E4%BB%96/">
+                                    <span class="chip bg-color">其他</span>
                                 </a>
                             
                         </div>
@@ -912,13 +1177,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/14/Closure/">
+                <a href="/2020/12/09/CSharpNote/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Lua的闭包">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="C#学习笔记">
                         
-                        <span class="card-title">Lua的闭包</span>
+                        <span class="card-title">C#学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -929,7 +1194,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
                         </span>
                         <span class="publish-author">
                             
@@ -946,8 +1211,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Lua/">
-                        <span class="chip bg-color">Lua</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C#</span>
                     </a>
                     
                 </div>
@@ -961,13 +1226,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/11/LuaOOP/">
+                <a href="/2020/01/15/LuaSource/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Lua实现面向对象">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Lua源码笔记">
                         
-                        <span class="card-title">Lua实现面向对象</span>
+                        <span class="card-title">Lua源码笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -978,7 +1243,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-15
                             </span>
                         <span class="publish-author">
                             
@@ -1220,13 +1485,13 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/ShaoxinGu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:853674765@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1236,7 +1501,7 @@
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=853674765" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 853674765" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1245,6 +1510,10 @@
 
 
 
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
 
 </div>
     </div>
