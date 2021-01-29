@@ -473,6 +473,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -485,220 +488,220 @@
 <h1 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h1><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p>Lua的作者之一<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Roberto_Ierusalimschy">Roberto Lerusalimschy</a>在《Program in Lua》书中推荐了<a target="_blank" rel="noopener" href="http://www.lua.org/pil/16.html">一种实现LuaOO的方案</a>，这种方案很简单也很容易理解。</p>
 <p>在Lua里，类和实例都是table。在继承或实例化的时候，类会被赋值给实例或子类metatable的__index。</p>
 <p>核心代码其实就这几行：</p>
-<pre><code class="lua">Class = &#123;&#125;
-function Class:new (o)
-    o = o or &#123;&#125;   -- create object if user does not provide one
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end</code></pre>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">Class <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">new</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span>
+    o <span class="token operator">=</span> o <span class="token keyword">or</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   <span class="token comment">-- create object if user does not provide one</span>
+    <span class="token function">setmetatable</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>__index <span class="token operator">=</span> self
+    <span class="token keyword">return</span> o
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>具体的案例如下：</p>
-<pre><code class="lua">Base = &#123;&#125;
-function Base:new (o)
-    o = o or &#123;&#125;   -- create object if user does not provide one
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">Base <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">function</span> Base<span class="token punctuation">:</span><span class="token function">new</span> <span class="token punctuation">(</span>o<span class="token punctuation">)</span>
+    o <span class="token operator">=</span> o <span class="token keyword">or</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>   <span class="token comment">-- create object if user does not provide one</span>
+    <span class="token function">setmetatable</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> self<span class="token punctuation">)</span>
+    self<span class="token punctuation">.</span>__index <span class="token operator">=</span> self
+    <span class="token keyword">return</span> o
+<span class="token keyword">end</span>
 
-function Base:Test1()
-    print(&quot;Base Test1&quot;)
-end
+<span class="token keyword">function</span> Base<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Base Test1"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
 
-function Base:Test2()
-    print(&quot;Base Test2&quot;)
-end
+<span class="token keyword">function</span> Base<span class="token punctuation">:</span><span class="token function">Test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Base Test2"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
 
---Child既可以说是Base类的实例，也可以说是Base类的子类，因为它们本质上都是table对象
-Child = Base:new()
+<span class="token comment">--Child既可以说是Base类的实例，也可以说是Base类的子类，因为它们本质上都是table对象</span>
+Child <span class="token operator">=</span> Base<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-function Child:Test1() --Child类重写了Test1方法
-    print(&quot;Child Test1&quot;)
-end
+<span class="token keyword">function</span> Child<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">--Child类重写了Test1方法</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Child Test1"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
 
-local a = Base:new()    --生成一个Base类的实例
-a:Test1()               --将打印&quot;Base Test1&quot;
-a:Test2()               --将打印&quot;Base Test2&quot;
+<span class="token keyword">local</span> a <span class="token operator">=</span> Base<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">--生成一个Base类的实例</span>
+a<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Base Test1"</span>
+a<span class="token punctuation">:</span><span class="token function">Test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Base Test2"</span>
 
-local b = Child:new()   --生成一个Child类的实例
-b:Test1()               --将打印&quot;Child Test1&quot;
-b:Test2()               --将打印&quot;Base Test2&quot;,调用的是父类的方法</code></pre>
+<span class="token keyword">local</span> b <span class="token operator">=</span> Child<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">--生成一个Child类的实例</span>
+b<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Child Test1"</span>
+b<span class="token punctuation">:</span><span class="token function">Test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Base Test2",调用的是父类的方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>这个方案是我在工作中接触到的，算是方案一的升级版。</p>
 <p>核心代码如下：</p>
-<pre><code class="lua">-- 所有类都会继承自这个类，真·基类
-Class = &#123;__ClassType = &quot;Class&quot;&#125;    
-ALL_CLASS = ALL_CLASS or &#123;&#125;
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua"><span class="token comment">-- 所有类都会继承自这个类，真·基类</span>
+Class <span class="token operator">=</span> <span class="token punctuation">&#123;</span>__ClassType <span class="token operator">=</span> <span class="token string">"Class"</span><span class="token punctuation">&#125;</span>	
+ALL_CLASS <span class="token operator">=</span> ALL_CLASS <span class="token keyword">or</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
 
-function Class:Inherit(ClassName, o)
-    o = o or &#123;&#125;
-    o.mt = &#123; __index = o&#125;
-    assert(ClassName, &quot;必须要有类名&quot;)
-    assert(not (ClassName and ALL_CLASS[ClassName]), string.format(&quot;该类已存在： %s&quot;, ClassName))
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">Inherit</span><span class="token punctuation">(</span>ClassName<span class="token punctuation">,</span> o<span class="token punctuation">)</span>
+    o <span class="token operator">=</span> o <span class="token keyword">or</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    o<span class="token punctuation">.</span>mt <span class="token operator">=</span> <span class="token punctuation">&#123;</span> __index <span class="token operator">=</span> o<span class="token punctuation">&#125;</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>ClassName<span class="token punctuation">,</span> <span class="token string">"必须要有类名"</span><span class="token punctuation">)</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span><span class="token keyword">not</span> <span class="token punctuation">(</span>ClassName <span class="token keyword">and</span> ALL_CLASS<span class="token punctuation">[</span>ClassName<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> string<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"该类已存在： %s"</span><span class="token punctuation">,</span> ClassName<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    o.__ClassType = ClassName
-    ALL_CLASS[ClassName] = true
+    o<span class="token punctuation">.</span>__ClassType <span class="token operator">=</span> ClassName
+    ALL_CLASS<span class="token punctuation">[</span>ClassName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">true</span>
 
-    o.__InheritMap = &#123;[self:GetType()] = true &#125;  -- 记录继承类型
-    o.__InheritSelf = false
-    if self.__InheritMap then
-        for UpType, _ in pairs(self.__InheritMap) do
-            o.__InheritMap[UpType] = true
-        end
-    end
+    o<span class="token punctuation">.</span>__InheritMap <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">[</span>self<span class="token punctuation">:</span><span class="token function">GetType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">&#125;</span>  <span class="token comment">-- 记录继承类型</span>
+    o<span class="token punctuation">.</span>__InheritSelf <span class="token operator">=</span> <span class="token keyword">false</span>
+    <span class="token keyword">if</span> self<span class="token punctuation">.</span>__InheritMap <span class="token keyword">then</span>
+        <span class="token keyword">for</span> UpType<span class="token punctuation">,</span> _ <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>__InheritMap<span class="token punctuation">)</span> <span class="token keyword">do</span>
+            o<span class="token punctuation">.</span>__InheritMap<span class="token punctuation">[</span>UpType<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">true</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
 
-    setmetatable(o, &#123;__index = self&#125;)
-    return o
-end
+    <span class="token function">setmetatable</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>__index <span class="token operator">=</span> self<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> o
+<span class="token keyword">end</span>
 
-function Class:IsSubObj(ObjType)
-    return self:GetTypeMap()[ObjType]
-end
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">IsSubObj</span><span class="token punctuation">(</span>ObjType<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">:</span><span class="token function">GetTypeMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span>ObjType<span class="token punctuation">]</span>
+<span class="token keyword">end</span>
 
-function Class:GetTypeMap()
-    local clsSelf = getmetatable(self)
-    if clsSelf then
-        local Temp = clsSelf.__index
-        if not Temp.__InheritSelf then
-            Temp.__InheritMap[Temp:GetType()] = true
-            Temp.__InheritSelf = true
-        end
-        return Temp.__InheritMap
-    end
-    return &#123;&#125;
-end
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">GetTypeMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">local</span> clsSelf <span class="token operator">=</span> <span class="token function">getmetatable</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> clsSelf <span class="token keyword">then</span>
+        <span class="token keyword">local</span> Temp <span class="token operator">=</span> clsSelf<span class="token punctuation">.</span>__index
+        <span class="token keyword">if</span> <span class="token keyword">not</span> Temp<span class="token punctuation">.</span>__InheritSelf <span class="token keyword">then</span>
+            Temp<span class="token punctuation">.</span>__InheritMap<span class="token punctuation">[</span>Temp<span class="token punctuation">:</span><span class="token function">GetType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">true</span>
+            Temp<span class="token punctuation">.</span>__InheritSelf <span class="token operator">=</span> <span class="token keyword">true</span>
+        <span class="token keyword">end</span>
+        <span class="token keyword">return</span> Temp<span class="token punctuation">.</span>__InheritMap
+    <span class="token keyword">end</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">end</span>
 
-function Class:New(...)
-    local o = &#123;&#125;
-    setmetatable(o, &#123;__index = self&#125;)
-    if o.Ctor then o:Ctor(...) end --调用构造函数
-    return o
-end
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token punctuation">...</span><span class="token punctuation">)</span>
+    <span class="token keyword">local</span> o <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token function">setmetatable</span><span class="token punctuation">(</span>o<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>__index <span class="token operator">=</span> self<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> o<span class="token punctuation">.</span>Ctor <span class="token keyword">then</span> o<span class="token punctuation">:</span><span class="token function">Ctor</span><span class="token punctuation">(</span><span class="token punctuation">...</span><span class="token punctuation">)</span> <span class="token keyword">end</span> <span class="token comment">--调用构造函数</span>
+    <span class="token keyword">return</span> o
+<span class="token keyword">end</span>
 
-function Class:Ctor() end
-function Class:InClass() return true end
-function Class:OnCreate() end
-function Class:OnDestroy() end
-function Class:GetType()    return self.__ClassType end
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">Ctor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">end</span>
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">InClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">true</span> <span class="token keyword">end</span>
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">OnCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">end</span>
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">OnDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">end</span>
+<span class="token keyword">function</span> Class<span class="token punctuation">:</span><span class="token function">GetType</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token keyword">return</span> self<span class="token punctuation">.</span>__ClassType <span class="token keyword">end</span>
 
---获取一个class的父类
-function Super(Class)
-    return getmetatable(Class).__index
-end
+<span class="token comment">--获取一个class的父类</span>
+<span class="token keyword">function</span> <span class="token function">Super</span><span class="token punctuation">(</span>Class<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token function">getmetatable</span><span class="token punctuation">(</span>Class<span class="token punctuation">)</span><span class="token punctuation">.</span>__index
+<span class="token keyword">end</span>
 
---判断一个类是否是类的子类 &amp; 判断一个对象否是另一个类的实例
-function IsSub(Obj, Base)
-    local Temp = Obj
-    while  1 do     --循环回溯metatable
-        local mt = getmetatable(Temp)
-        if mt then
-            Temp = mt.__index
-            if Temp == Base then
-                return true
-            end
-        else
-            return false
-        end
-    end
-end</code></pre>
+<span class="token comment">--判断一个类是否是类的子类 &amp; 判断一个对象否是另一个类的实例</span>
+<span class="token keyword">function</span> <span class="token function">IsSub</span><span class="token punctuation">(</span>Obj<span class="token punctuation">,</span> Base<span class="token punctuation">)</span>
+    <span class="token keyword">local</span> Temp <span class="token operator">=</span> Obj
+    <span class="token keyword">while</span>  <span class="token number">1</span> <span class="token keyword">do</span>     <span class="token comment">--循环回溯metatable</span>
+        <span class="token keyword">local</span> mt <span class="token operator">=</span> <span class="token function">getmetatable</span><span class="token punctuation">(</span>Temp<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> mt <span class="token keyword">then</span>
+            Temp <span class="token operator">=</span> mt<span class="token punctuation">.</span>__index
+            <span class="token keyword">if</span> Temp <span class="token operator">==</span> Base <span class="token keyword">then</span>
+                <span class="token keyword">return</span> <span class="token keyword">true</span>
+            <span class="token keyword">end</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> <span class="token keyword">false</span>
+        <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>示例如下：</p>
-<pre><code class="lua">Base = Base or Class:Inherit(&quot;Base&quot;)
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">Base <span class="token operator">=</span> Base <span class="token keyword">or</span> Class<span class="token punctuation">:</span><span class="token function">Inherit</span><span class="token punctuation">(</span><span class="token string">"Base"</span><span class="token punctuation">)</span>
 
-function Base:Test1()
-    print(&quot;Base Test1&quot;)
-end
+<span class="token keyword">function</span> Base<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Base Test1"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
 
-function Base:Test2()
-    print(&quot;Base Test2&quot;)
-end
+<span class="token keyword">function</span> Base<span class="token punctuation">:</span><span class="token function">Test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Base Test2"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
 
-Child = Child or Base:Inherit(&quot;Child&quot;)
+Child <span class="token operator">=</span> Child <span class="token keyword">or</span> Base<span class="token punctuation">:</span><span class="token function">Inherit</span><span class="token punctuation">(</span><span class="token string">"Child"</span><span class="token punctuation">)</span>
 
-function Child:Test1()  --Child类重写了Test1方法
-    print(&quot;Child Test1&quot;)
-end
+<span class="token keyword">function</span> Child<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">--Child类重写了Test1方法</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Child Test1"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
 
-local a = Base:new()    --生成一个Base类的实例
-a:Test1()               --将打印&quot;Base Test1&quot;
-a:Test2()               --将打印&quot;Base Test2&quot;
+<span class="token keyword">local</span> a <span class="token operator">=</span> Base<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">--生成一个Base类的实例</span>
+a<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Base Test1"</span>
+a<span class="token punctuation">:</span><span class="token function">Test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Base Test2"</span>
 
-local b = Child:new()   --生成一个Child类的实例
-b:Test1()               --将打印&quot;Child Test1&quot;
-b:Test2()               --将打印&quot;Base Test2&quot;,调用的是父类的方法</code></pre>
+<span class="token keyword">local</span> b <span class="token operator">=</span> Child<span class="token punctuation">:</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">--生成一个Child类的实例</span>
+b<span class="token punctuation">:</span><span class="token function">Test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Child Test1"</span>
+b<span class="token punctuation">:</span><span class="token function">Test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment">--将打印"Base Test2",调用的是父类的方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h2><p>这个是云风提供的方案：<a target="_blank" rel="noopener" href="https://blog.codingnow.com/cloud/LuaOO">博客地址</a>。</p>
-<pre><code class="lua">local _class=&#123;&#125;
-
-function class(super)
-    local class_type=&#123;&#125;
-    class_type.ctor=false
-    class_type.super=super
-    class_type.new=function(...) 
-            local obj=&#123;&#125;
-            do
-                local create
-                create = function(c,...)
-                    if c.super then
-                        create(c.super,...)
-                    end
-                    if c.ctor then
-                        c.ctor(obj,...)
-                    end
-                end
-
-                create(class_type,...)
-            end
-            setmetatable(obj,&#123; __index=_class[class_type] &#125;)
-            return obj
-        end
-    local vtbl=&#123;&#125;
-    _class[class_type]=vtbl
-
-    setmetatable(class_type,&#123;__newindex=
-        function(t,k,v)
-            vtbl[k]=v
-        end
-    &#125;)
-
-    if super then
-        setmetatable(vtbl,&#123;__index=
-            function(t,k)
-                local ret=_class[super][k]
-                vtbl[k]=ret
-                return ret
-            end
-        &#125;)
-    end
-
-    return class_type
-end</code></pre>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua"><span class="token keyword">local</span> _class<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+ 
+<span class="token keyword">function</span> <span class="token function">class</span><span class="token punctuation">(</span>super<span class="token punctuation">)</span>
+	<span class="token keyword">local</span> class_type<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+	class_type<span class="token punctuation">.</span>ctor<span class="token operator">=</span><span class="token keyword">false</span>
+	class_type<span class="token punctuation">.</span>super<span class="token operator">=</span>super
+	class_type<span class="token punctuation">.</span>new<span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">...</span><span class="token punctuation">)</span> 
+			<span class="token keyword">local</span> obj<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+			<span class="token keyword">do</span>
+				<span class="token keyword">local</span> create
+				create <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">)</span>
+					<span class="token keyword">if</span> c<span class="token punctuation">.</span>super <span class="token keyword">then</span>
+						<span class="token function">create</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span>super<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">)</span>
+					<span class="token keyword">end</span>
+					<span class="token keyword">if</span> c<span class="token punctuation">.</span>ctor <span class="token keyword">then</span>
+						c<span class="token punctuation">.</span><span class="token function">ctor</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">)</span>
+					<span class="token keyword">end</span>
+				<span class="token keyword">end</span>
+ 
+				<span class="token function">create</span><span class="token punctuation">(</span>class_type<span class="token punctuation">,</span><span class="token punctuation">...</span><span class="token punctuation">)</span>
+			<span class="token keyword">end</span>
+			<span class="token function">setmetatable</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">&#123;</span> __index<span class="token operator">=</span>_class<span class="token punctuation">[</span>class_type<span class="token punctuation">]</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span> obj
+		<span class="token keyword">end</span>
+	<span class="token keyword">local</span> vtbl<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+	_class<span class="token punctuation">[</span>class_type<span class="token punctuation">]</span><span class="token operator">=</span>vtbl
+ 
+	<span class="token function">setmetatable</span><span class="token punctuation">(</span>class_type<span class="token punctuation">,</span><span class="token punctuation">&#123;</span>__newindex<span class="token operator">=</span>
+		<span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+			vtbl<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>v
+		<span class="token keyword">end</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+ 
+	<span class="token keyword">if</span> super <span class="token keyword">then</span>
+		<span class="token function">setmetatable</span><span class="token punctuation">(</span>vtbl<span class="token punctuation">,</span><span class="token punctuation">&#123;</span>__index<span class="token operator">=</span>
+			<span class="token keyword">function</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>k<span class="token punctuation">)</span>
+				<span class="token keyword">local</span> ret<span class="token operator">=</span>_class<span class="token punctuation">[</span>super<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span>
+				vtbl<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>ret
+				<span class="token keyword">return</span> ret
+			<span class="token keyword">end</span>
+		<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	<span class="token keyword">end</span>
+ 
+	<span class="token keyword">return</span> class_type
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建基类：</p>
-<pre><code class="lua">base_type=class()            -- 定义一个基类 base_type
-
-function base_type:ctor(x)    -- 定义 base_type 的构造函数
-    print(&quot;base_type ctor&quot;)
-    self.x=x
-end
-
-function base_type:print_x()-- 定义一个成员函数 base_type:print_x
-    print(self.x)
-end
-
-function base_type:hello()    -- 定义另一个成员函数 base_type:hello
-    print(&quot;hello base_type&quot;)
-end</code></pre>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">base_type<span class="token operator">=</span><span class="token function">class</span><span class="token punctuation">(</span><span class="token punctuation">)</span>			<span class="token comment">-- 定义一个基类 base_type</span>
+ 
+<span class="token keyword">function</span> base_type<span class="token punctuation">:</span><span class="token function">ctor</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>	<span class="token comment">-- 定义 base_type 的构造函数</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"base_type ctor"</span><span class="token punctuation">)</span>
+	self<span class="token punctuation">.</span>x<span class="token operator">=</span>x
+<span class="token keyword">end</span>
+ 
+<span class="token keyword">function</span> base_type<span class="token punctuation">:</span><span class="token function">print_x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">-- 定义一个成员函数 base_type:print_x</span>
+	<span class="token function">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>x<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+ 
+<span class="token keyword">function</span> base_type<span class="token punctuation">:</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">-- 定义另一个成员函数 base_type:hello</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello base_type"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建子类：</p>
-<pre><code class="lua">test=class(base_type)    -- 定义一个类 test 继承于 base_type
-
-function test:ctor()    -- 定义 test 的构造函数
-    print(&quot;test ctor&quot;)
-end
-
-function test:hello()    -- 重载 base_type:hello 为 test:hello
-    print(&quot;hello test&quot;)
-end</code></pre>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">test<span class="token operator">=</span><span class="token function">class</span><span class="token punctuation">(</span>base_type<span class="token punctuation">)</span>	<span class="token comment">-- 定义一个类 test 继承于 base_type</span>
+ 
+<span class="token keyword">function</span> test<span class="token punctuation">:</span><span class="token function">ctor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">-- 定义 test 的构造函数</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"test ctor"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+ 
+<span class="token keyword">function</span> test<span class="token punctuation">:</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	<span class="token comment">-- 重载 base_type:hello 为 test:hello</span>
+	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello test"</span><span class="token punctuation">)</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>测试：</p>
-<pre><code class="lua">a=test.new(1)    -- 输出两行，base_type ctor 和 test ctor 。这个对象被正确的构造了。
-a:print_x()        -- 输出 1 ，这个是基类 base_type 中的成员函数。
-a:hello()        -- 输出 hello test ，这个函数被重载了。</code></pre>
+<pre class="line-numbers language-lua" data-language="lua"><code class="language-lua">a<span class="token operator">=</span>test<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>	<span class="token comment">-- 输出两行，base_type ctor 和 test ctor 。这个对象被正确的构造了。</span>
+a<span class="token punctuation">:</span><span class="token function">print_x</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">-- 输出 1 ，这个是基类 base_type 中的成员函数。</span>
+a<span class="token punctuation">:</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span>		<span class="token comment">-- 输出 hello test ，这个函数被重载了。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
