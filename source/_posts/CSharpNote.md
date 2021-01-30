@@ -117,15 +117,22 @@ params修饰的参数可以接收0或任意个参数。
 
 ## 类和对象
 
-### 成员变量和成员方法
 
-可以使用public、protected和private来控制访问权限
+
+### 成员
+
+- 成员变量和成员方法统称为类的成员。
+- 可以使用public、protected和private三种访问修饰符来控制成员的访问权限
 
 ### 成员属性和索引器
 
+#### 成员属性
+
+用于封装保护成员变量。
+
 关键字：get、set、return、value
 
-成员属性示例：
+示例：
 
 ```c#
 class Person
@@ -150,7 +157,11 @@ class Person
 }
 ```
 
-索引器示例：
+#### 索引器
+
+用于实现对象的下标访问操作。
+
+示例：
 
 ```c#
 class Group
@@ -179,6 +190,152 @@ class Group
     {
       array[x][y] = value;
     }
+  }
+}
+```
+
+### 静态相关（static）
+
+- 静态成员与非静态成员。
+
+  - 用static修饰的成员为静态成员，否则为非静态成员。
+  - 静态成员存储在静态存储区，不参与垃圾回收，生命周期为整个程序运行期间。通过**类名.静态成员**的方式直接访问。
+  - 非静态成员存储在动态存储区，参与垃圾回收，生命周期由构造函数和析构函数控制。需要创建实例，通过**实例.成员**访问。
+
+  - 另外用const关键字修饰的成员变量称为常量，具有静态属性，但不分配内存，而是在编译时直接替换。因此必须被初始化。
+
+- 静态类与非静态类
+
+  - 用static关键字修饰的类为静态类，否则为普通类。
+  - 静态类只能包含静态成员。
+  - 静态类不能被实例化，通常作为工具类使用。
+
+- 静态构造函数
+
+  - 用static修饰的构造函数称为静态构造函数，否则为普通构造函数。
+  - 会在类第一次被使用的时候自动执行一次，一般用于对静态变量的初始化。
+  - 静态构造函数不能带参数。
+  - 静态构造函数不构成对类普通构造函数的重载。
+
+### 拓展方法
+
+- 只能定义为静态类中的静态方法。
+- 用于给已有的类型拓展方法。
+
+示例：
+
+```c#
+static class Tools
+{
+  public static void PrintNum(this int value)
+    Console.WriteLine(value.ToString());
+}
+int a = 10;
+a.PrintNum();
+```
+
+### 运算符重载
+
+语法：public static 返回值 operator 运算符(参数列表)
+
+示例：
+
+```c#
+class Point
+{
+  public int x;
+  public int y;
+  Point(int x, int y)
+  {
+    this.x = x;
+    this.y = y;
+  }
+  public void Print()
+  {
+    Console.WriteLine("x = " + x + ", y = " + y);
+  }
+  public static Point operator +(Point p1, Point p2)
+  {
+    Point newPoint = new Point();
+    newPoint.x = p1.x + p2.x;
+    newPoint.y = p1.y + p2.y;
+    return newPoint;
+  }
+  public static Point operator +(Point p, int num)
+  {
+    Point newPoint = new Point();
+    newPoint.x = p.x + num;
+    newPoint.y = p.y + num;
+    return newPoint;
+  }
+  public static Point operator +(int num, Point p)
+  {
+    Point newPoint = new Point();
+    newPoint.x = p.x + num;
+    newPoint.y = p.y + num;
+    return newPoint;
+  }
+}
+Point p = new Point(1, 1);
+Point p2 = new Point(2, 2);
+Point p3 = p + p2;
+p3.Print();
+```
+
+- 一定是一个public的静态方法
+- 可重载的运算符：所有的算数运算符、逻辑非!、所有的位运算符、所有的条件运算符（必须成对实现）
+- 不可重载的运算符：逻辑或||、逻辑与&&、索引符[]（由索引器实现）、强转运算符()、访问运算符.、三目运算符?、赋值运算符=
+- 同一个运算符可多次重载
+- 重载方法不可使用ref、out运算符
+
+### 内部类和分部类
+
+出于可读性考虑，一般不使用。
+
+#### 内部类
+
+在一个类的内部定义的类称为内部类。
+
+```c#
+class Person
+{
+  int age;
+  string name;
+  public Body body;
+  public class Body
+  {
+    Arm leftArm;
+    Arm rightArm;
+    class Arm
+    {
+      
+    }
+  }
+}
+```
+
+#### 分部类
+
+关键字：partial
+
+示例：
+
+```c#
+partial class Student
+{
+  public string name;
+  partial void Test();
+}
+partial class Student
+{
+  public void Speak(string str)
+  {
+    
+  }
+  
+  partial void Test()
+  {
+    //分部方法的实现
   }
 }
 ```
